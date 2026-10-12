@@ -5,9 +5,9 @@ Fichier généré par `pnpm sources` depuis `content/sources.ts`, qui fait foi :
 ## Bilan
 
 - à sourcer : 0
-- à revérifier : 3
+- à revérifier : 1
 - calcul : 1
-- vérifié : 44
+- vérifié : 45
 - emplacements à compléter : 0
 
 La mise en ligne publique (`STRICT=1` ou `SITE_LAUNCHED=1`) exige zéro fait à sourcer ou à revérifier et zéro emplacement à compléter.
@@ -22,22 +22,6 @@ L’élection présidentielle a lieu les 18 avril et 2 mai 2027.
 - Note : Dates à revérifier au décret de convocation des électeurs.
 - Sources :
   - [Présidentielle : lancement d’une assemblée citoyenne pour nourrir le débat démocratique](https://www.linfodurable.fr/presidentielle-lancement-dune-assemblee-citoyenne-pour-nourrir-le-debat-democratique-59048) : L’info durable, dépêche AFP, publié le 2026-09-19, consulté le 2026-10-12.
-
-### `cccDecompteReporterre`
-
-Selon Reporterre, 15 propositions seulement ont été reprises sans modification.
-
-- Note : Page protégée par un contrôle anti-robots : non relue lors de la vérification du 12 octobre 2026. À relire à la main.
-- Sources :
-  - [Convention pour le climat : seules 10 % des propositions ont été reprises par le gouvernement](https://reporterre.net/Convention-pour-le-climat-seules-10-des-propositions-ont-ete-reprises-par-le-gouvernement) : Reporterre, consulté le 2026-10-12.
-
-### `cccDecompteWwf`
-
-Selon le WWF, cité par Reporterre, 24 des 149 propositions sont pleinement appliquées.
-
-- Note : Page protégée par un contrôle anti-robots : non relue lors de la vérification du 12 octobre 2026. À relire à la main. Le rapport du WWF lui-même reste à trouver.
-- Sources :
-  - [Seules 24 des 149 mesures de la Convention citoyenne pour le climat sont vraiment appliquées](https://reporterre.net/Seules-24-des-149-mesures-de-la-Convention-citoyenne-pour-le-climat-sont-vraiment) : Reporterre, consulté le 2026-10-12.
 
 ## Faits calculés
 
@@ -307,6 +291,16 @@ Le président de la République s’était engagé à transmettre ces propositio
   - [Emmanuel Macron dit oui à 146 propositions de la Convention citoyenne pour le climat !](https://www.elysee.fr/emmanuel-macron/2020/06/29/le-president-emmanuel-macron-repond-aux-150-citoyens-de-la-convention-citoyenne-pour-le-climat) : Élysée, publié le 2020-06-29, consulté le 2026-10-12.
   - [Climat : des 149 propositions des Citoyens aux mesures adoptées](https://www.linfodurable.fr/politique/climat-des-149-propositions-des-citoyens-aux-mesures-adoptees-24184) : L’info durable, avec l’AFP, publié le 2021-04-15, consulté le 2026-10-12.
 
+### `cccDecompteReporterre`
+
+Selon Reporterre, qui a examiné chaque réponse du gouvernement, seules 15 des 149 propositions ont été retranscrites.
+
+- Extrait : « Résultat : seules 15 propositions ont été retranscrites. »
+- Relu le 2026-10-12
+- Note : Page protégée contre les robots : relue à la main par Guillaume Salle le 12 octobre 2026.
+- Sources :
+  - [Convention pour le climat : seules 10 % des propositions ont été reprises par le gouvernement](https://reporterre.net/Convention-pour-le-climat-seules-10-des-propositions-ont-ete-reprises-par-le-gouvernement) : Reporterre, consulté le 2026-10-12.
+
 ### `cccDecompteGouvernement`
 
 Le gouvernement affirme avoir repris la quasi-totalité des 149 propositions.
@@ -456,7 +450,6 @@ Limites des assemblées tirées au sort : pas de sanction électorale, biais de
 - [Présidentielle : lancement d’une assemblée citoyenne pour nourrir le débat démocratique](https://www.linfodurable.fr/presidentielle-lancement-dune-assemblee-citoyenne-pour-nourrir-le-debat-democratique-59048) : L’info durable, dépêche AFP, publié le 2026-09-19, consulté le 2026-10-12.
 - [78 % des Français n’ont pas confiance dans la politique, selon le baromètre Cevipof](https://www.publicsenat.fr/actualitudes/politique/78-des-francais-nont-pas-confiance-en-la-politique-selon-le-barometre-de-cevipof) : Public Sénat, Guillaume Cros, publié le 2026-02-10, consulté le 2026-10-12.
 - [Convention pour le climat : seules 10 % des propositions ont été reprises par le gouvernement](https://reporterre.net/Convention-pour-le-climat-seules-10-des-propositions-ont-ete-reprises-par-le-gouvernement) : Reporterre, consulté le 2026-10-12.
-- [Seules 24 des 149 mesures de la Convention citoyenne pour le climat sont vraiment appliquées](https://reporterre.net/Seules-24-des-149-mesures-de-la-Convention-citoyenne-pour-le-climat-sont-vraiment) : Reporterre, consulté le 2026-10-12.
 - [Emmanuel Macron dit oui à 146 propositions de la Convention citoyenne pour le climat !](https://www.elysee.fr/emmanuel-macron/2020/06/29/le-president-emmanuel-macron-repond-aux-150-citoyens-de-la-convention-citoyenne-pour-le-climat) : Élysée, publié le 2020-06-29, consulté le 2026-10-12.
 - [Climat : des 149 propositions des Citoyens aux mesures adoptées](https://www.linfodurable.fr/politique/climat-des-149-propositions-des-citoyens-aux-mesures-adoptees-24184) : L’info durable, avec l’AFP, publié le 2021-04-15, consulté le 2026-10-12.
 - [Fin de vie : la convention citoyenne largement favorable à une « aide active à mourir »](https://www.macommune.info/fin-de-vie-la-convention-citoyenne-largement-favorable-a-une-aide-active-a-mourir) : macommune.info, publié le 2023-02-20, consulté le 2026-10-12.

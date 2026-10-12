@@ -29,7 +29,7 @@ export const FORMES = [
     texte:
       "La Convention citoyenne pour le climat a réuni 150 citoyens tirés au sort, qui ont adopté 149 propositions. Le président de la République s’était engagé à les soumettre « sans filtre ». Sur la fin de vie, 184 citoyens se sont prononcés à 75 % pour ouvrir une aide active à mourir. Une loi sur l’aide à mourir a été adoptée en juillet 2026.",
     limite:
-      "Combien de propositions ont été reprises ? Les décomptes divergent : 15 sans modification selon Reporterre, 24 pleinement appliquées selon le WWF, quand le gouvernement affirme en avoir repris la quasi-totalité.",
+      "Combien de propositions ont été reprises ? Les décomptes divergent : 15 retranscrites selon Reporterre, quand le gouvernement affirme en avoir repris la quasi-totalité.",
     legende: [
       "Convention pour le climat",
       "149 propositions adoptées par les citoyens",
@@ -40,7 +40,7 @@ export const FORMES = [
       "finDeVieConvention",
       "finDeVieLoi",
       "cccDecompteReporterre",
-      "cccDecompteWwf",
+
       "cccDecompteGouvernement",
     ],
   },

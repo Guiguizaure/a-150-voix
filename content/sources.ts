@@ -82,13 +82,6 @@ export const SOURCES = {
     url: "https://reporterre.net/Convention-pour-le-climat-seules-10-des-propositions-ont-ete-reprises-par-le-gouvernement",
     consulte: "2026-10-12",
   },
-  reporterreWwf: {
-    titre:
-      "Seules 24 des 149 mesures de la Convention citoyenne pour le climat sont vraiment appliquées",
-    editeur: "Reporterre",
-    url: "https://reporterre.net/Seules-24-des-149-mesures-de-la-Convention-citoyenne-pour-le-climat-sont-vraiment",
-    consulte: "2026-10-12",
-  },
   elyseeCcc: {
     titre:
       "Emmanuel Macron dit oui à 146 propositions de la Convention citoyenne pour le climat !",
@@ -256,8 +249,6 @@ export interface Fait {
 }
 
 const RELU = "2026-10-12";
-const REPORTERRE_NON_RELU =
-  "Page protégée par un contrôle anti-robots : non relue lors de la vérification du 12 octobre 2026. À relire à la main.";
 
 export const FAITS = {
   // Un commun accord : l'assemblée
@@ -515,17 +506,12 @@ export const FAITS = {
   },
   cccDecompteReporterre: {
     enonce:
-      "Selon Reporterre, 15 propositions seulement ont été reprises sans modification.",
-    statut: "a-reverifier",
+      "Selon Reporterre, qui a examiné chaque réponse du gouvernement, seules 15 des 149 propositions ont été retranscrites.",
+    statut: "verifie",
     sources: ["reporterreCcc"],
-    note: REPORTERRE_NON_RELU,
-  },
-  cccDecompteWwf: {
-    enonce:
-      "Selon le WWF, cité par Reporterre, 24 des 149 propositions sont pleinement appliquées.",
-    statut: "a-reverifier",
-    sources: ["reporterreWwf"],
-    note: `${REPORTERRE_NON_RELU} Le rapport du WWF lui-même reste à trouver.`,
+    verifie: RELU,
+    extrait: "Résultat : seules 15 propositions ont été retranscrites.",
+    note: "Page protégée contre les robots : relue à la main par Guillaume Salle le 12 octobre 2026.",
   },
   cccDecompteGouvernement: {
     enonce:
