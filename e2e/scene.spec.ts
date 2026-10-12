@@ -204,6 +204,11 @@ test("soutenir : le budget et sa répartition sur la scène", async ({
     "budget estimé de l’assemblée",
   );
   await expect(page.locator(".ov .legend li")).toHaveCount(2);
+  await expect(page.locator(".legend .full")).toHaveCSS("width", "9px");
+  await expect(page.locator(".legend .hollow")).toHaveCSS(
+    "border-top-style",
+    "solid",
+  );
 });
 
 test("chaque étape dessine sa scène", async ({ page }) => {

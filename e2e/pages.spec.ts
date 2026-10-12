@@ -62,3 +62,15 @@ test("page introuvable : un titre, un retour à l'accueil, sans violation axe", 
   await page.getByRole("link", { name: "Revenir à l’accueil" }).click();
   await expect(page).toHaveURL(/\/$/);
 });
+
+test("les pages hors du guide gardent leur mise en page", async ({ page }) => {
+  await page.goto("/sources");
+  const largeur = await page
+    .locator(".simple-corps")
+    .evaluate((el) => getComputedStyle(el).maxWidth);
+  expect(largeur).toBe("736px");
+  await expect(page.locator(".sources > li").first()).toHaveCSS(
+    "border-top-style",
+    "solid",
+  );
+});
