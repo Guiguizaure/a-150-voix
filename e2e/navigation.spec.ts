@@ -64,3 +64,34 @@ test("balayer le texte vers la gauche passe à l'étape suivante", async ({
   });
   await expect(page).toHaveURL(/\/ecouter$/);
 });
+
+test("au changement d'étape, la page remonte et le titre est visible", async ({
+  page,
+}) => {
+  await page.goto("/hasard");
+  await page.evaluate(() => {
+    window.scrollTo(0, document.body.scrollHeight);
+    document.querySelector(".panel")?.scrollTo(0, 10000);
+  });
+  const nav = page.getByRole("navigation", { name: "Étapes du guide" });
+  await nav.getByRole("link", { name: /^Suivant/ }).click();
+  await expect(page).toHaveURL(/\/ecouter$/);
+  await expect.poll(() => page.evaluate(() => window.scrollY)).toBe(0);
+  await expect(page.getByRole("heading", { level: 1 })).toBeInViewport({
+    ratio: 1,
+  });
+});
+
+test("s'accorder : les boutons ne bougent pas quand leur libellé change", async ({
+  page,
+}) => {
+  await page.emulateMedia({ reducedMotion: "reduce" });
+  await page.goto("/accord");
+  const son = page.getByRole("button", { name: "Écouter l’accord" });
+  const avant = await son.boundingBox();
+  await page
+    .getByRole("slider", { name: "Du désaccord à l’accord" })
+    .fill("80");
+  await expect(page.getByRole("button", { name: "Désaccorder" })).toBeVisible();
+  expect(await son.boundingBox()).toEqual(avant);
+});

@@ -1,8 +1,8 @@
 "use client";
 
 // Navigation entre les étapes au clavier (flèches gauche et droite) et au balayage du texte
-// sur écran tactile ; à chaque changement d'étape, le titre reçoit le focus et le texte
-// revient en haut.
+// sur écran tactile ; à chaque changement d'étape, la page remonte en douceur et le titre
+// reçoit le focus.
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useRef } from "react";
 import { sensDuBalayage } from "@/lib/balayage";
@@ -30,7 +30,7 @@ export function Gestes() {
       if (actuel < 0) return;
       const cible = actuel + sens;
       if (cible < 0 || cible > TOTAL) return;
-      router.push(adresse(cible));
+      router.push(adresse(cible), { scroll: false });
     };
     const clavier = (ev: KeyboardEvent) => {
       if (
@@ -88,9 +88,14 @@ export function Gestes() {
       premier.current = false;
       return;
     }
+    // Next.js ne fait pas défiler (scroll={false}) : il amènerait le début du texte sous la
+    // scène collée en haut de l'écran mobile, et le titre serait masqué.
+    const doux = window.matchMedia("(prefers-reduced-motion: reduce)").matches
+      ? "auto"
+      : "smooth";
     const panneau = document.querySelector<HTMLElement>(".panel");
-    if (panneau) panneau.scrollTop = 0;
-    window.scrollTo({ top: 0 });
+    panneau?.scrollTo({ top: 0, behavior: doux });
+    window.scrollTo({ top: 0, behavior: doux });
     document.getElementById("titre-etape")?.focus({ preventScroll: true });
   }, [pathname]);
 

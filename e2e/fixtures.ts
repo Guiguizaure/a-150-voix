@@ -11,9 +11,8 @@ import { test as base, expect, type Page } from "@playwright/test";
  * Next.js (requêtes _rsc) annulés quand la page change : ce n'est pas une erreur du site.
  */
 function prechargementAnnule(texte: string): boolean {
-  return /Fetch API cannot load .*_rsc=.* due to access control checks/.test(
-    texte,
-  );
+  // Le texte arrive parfois coupé après « http: » : on n'en garde que la fin.
+  return /_rsc=\S* due to access control checks/.test(texte);
 }
 
 export const test = base.extend<{ consoleErrors: string[] }>({

@@ -48,6 +48,7 @@ export function GuideNav() {
         <Link
           className="nav-btn"
           href={adresse(r - 1)}
+          scroll={false}
           aria-disabled={r === 0 ? "true" : undefined}
           tabIndex={r === 0 ? -1 : undefined}
           aria-label={
@@ -56,7 +57,9 @@ export function GuideNav() {
               : `${T.precedent}${NNBSP}: ${precedent ? precedent.court : INTERFACE.accueil}`
           }
         >
-          <span aria-hidden="true">←</span>{" "}
+          <span className="fleche" aria-hidden="true">
+            ←
+          </span>
           <span className="lbl">{T.precedent}</span>
         </Link>
         <button
@@ -80,10 +83,13 @@ export function GuideNav() {
         <Link
           className="nav-btn"
           href={r === TOTAL ? "/" : adresse(r + 1)}
+          scroll={false}
           aria-label={`${libelleSuivant}${NNBSP}: ${suivant ? suivant.court : INTERFACE.accueil}`}
         >
-          <span className="lbl">{libelleSuivant}</span>{" "}
-          <span aria-hidden="true">→</span>
+          <span className="lbl">{libelleSuivant}</span>
+          <span className="fleche" aria-hidden="true">
+            →
+          </span>
         </Link>
       </div>
 
@@ -125,6 +131,7 @@ export function GuideNav() {
                   <li key={e.slug}>
                     <Link
                       href={chemin(e.slug)}
+                      scroll={false}
                       aria-current={e.numero === r ? "page" : undefined}
                       onClick={fermer}
                     >

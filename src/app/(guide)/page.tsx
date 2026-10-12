@@ -34,7 +34,7 @@ export default function Accueil() {
           <ol className="toc">
             {ETAPES.filter((e) => e.partie === partie).map((e) => (
               <li key={e.slug}>
-                <Link href={chemin(e.slug)}>
+                <Link href={chemin(e.slug)} scroll={false}>
                   <em aria-hidden="true">{e.numero}</em> {e.court}
                 </Link>
               </li>
@@ -46,6 +46,7 @@ export default function Accueil() {
         className="cta reveal"
         style={{ "--k": 2 } as React.CSSProperties}
         href={chemin(ETAPES[0].slug)}
+        scroll={false}
       >
         {ACCUEIL.commencer} <span aria-hidden="true">→</span>
       </Link>
