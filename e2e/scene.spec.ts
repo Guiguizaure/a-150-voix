@@ -149,3 +149,33 @@ test.describe("le dilemme", () => {
     );
   });
 });
+
+test.describe("s'accorder", () => {
+  test("le bouton accorde, puis désaccorde ; le curseur suit", async ({
+    page,
+  }) => {
+    await page.emulateMedia({ reducedMotion: "reduce" });
+    await page.goto("/accord");
+    const curseur = page.getByRole("slider", {
+      name: "Du désaccord à l’accord",
+    });
+    await expect(curseur).toHaveValue("0");
+    await page.getByRole("button", { name: "Accorder", exact: true }).click();
+    await expect(curseur).toHaveValue("100");
+    await page.getByRole("button", { name: "Désaccorder" }).click();
+    await expect(curseur).toHaveValue("0");
+  });
+
+  test("le son est coupé par défaut et s'active au clic", async ({ page }) => {
+    await page.goto("/accord");
+    const son = page.getByRole("button", { name: "Son", exact: true });
+    await expect(son).toHaveAttribute("aria-pressed", "false");
+    await page.getByRole("button", { name: "Écouter l’accord" }).click();
+    await expect(son).toHaveAttribute("aria-pressed", "true");
+    await expect(
+      page.getByRole("button", { name: "Couper le son" }),
+    ).toBeVisible();
+    await son.click();
+    await expect(son).toHaveAttribute("aria-pressed", "false");
+  });
+});

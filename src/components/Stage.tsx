@@ -14,6 +14,7 @@ import { intro } from "@/scene/formations";
 import { creerScenes } from "@/scene/scenes";
 import { vDepuisX } from "@/scene/scenes/dilemme";
 import { brancherMoteur, commander } from "@/scene/commandes";
+import { creerSon } from "@/scene/sound/accord";
 import { sortieScene } from "@/scene/store";
 import { Calques } from "./calques";
 import { usePalette } from "./ThemeToggle";
@@ -38,7 +39,7 @@ export function Stage() {
       reducedMotion: mq.matches,
       sortie: sortieScene,
     });
-    e.enregistrer(creerScenes(e));
+    e.enregistrer(creerScenes(e, { son: creerSon() }));
     moteur.current = e;
     brancherMoteur(e);
 

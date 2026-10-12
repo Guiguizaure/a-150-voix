@@ -4,6 +4,7 @@ import Link from "next/link";
 import { INTERFACE } from "@content/interface";
 import { GuideNav } from "./GuideNav";
 import { Lien, Markup } from "./Markup";
+import { SoundToggle } from "./SoundToggle";
 import { ThemeToggle } from "./ThemeToggle";
 
 function Mention({ className }: { className: string }) {
@@ -55,6 +56,7 @@ export function Shell({
           <Mention className="badge" />
         </div>
         <div className="tools">
+          <SoundToggle />
           <ThemeToggle />
         </div>
       </header>

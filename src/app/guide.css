@@ -672,6 +672,26 @@ input[type="range"]:focus-visible {
   }
 }
 
+.accord-ctl {
+  position: absolute;
+  left: clamp(14px, 2.4vw, 28px);
+  right: clamp(14px, 2.4vw, 28px);
+  bottom: clamp(8px, 1.8vw, 22px);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 4px 14px;
+}
+.accord-ctl .lbl {
+  font-size: var(--t-small);
+  color: var(--muted);
+}
+.accord-ctl input {
+  flex: 1 1 140px;
+  max-width: 300px;
+}
+
 /* Navigation (a) : segments indicatifs, Précédent, Sommaire « n / 8 », Suivant */
 .nav {
   border-top: 1px solid var(--line);

@@ -10,6 +10,10 @@ export const INTERFACE = {
   nouvelOnglet: "nouvel onglet",
   limite: "Limite.",
   sessionPassee: "Session passée :",
+  son: {
+    libelle: "Son",
+    titre: "Le son accompagne l’étape « S’accorder »",
+  },
   palette: {
     claire: "Palette claire",
   },
