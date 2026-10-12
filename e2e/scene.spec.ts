@@ -52,3 +52,37 @@ test("une arrivée directe sur une étape affiche sa scène", async ({ page }) =
   );
   await expect.poll(() => dessine(page)).toBe(true);
 });
+
+test.describe("calques", () => {
+  test("le hasard : le compteur monte, puis montre les 150 tirés au sort", async ({
+    page,
+  }) => {
+    await page.goto("/hasard");
+    const compteur = page.locator(".counter");
+    await expect(compteur).toContainText("numéros de téléphone composés");
+    await expect(compteur).toContainText(
+      "citoyennes et citoyens tirés au sort",
+      {
+        timeout: 8000,
+      },
+    );
+    await expect(page.locator(".counter-n")).toHaveText("150");
+    await page.getByRole("button", { name: "Rejouer le tirage" }).click();
+    await expect(compteur).toContainText("numéros de téléphone composés");
+  });
+
+  test("mouvement réduit : le tirage s'affiche aussitôt", async ({ page }) => {
+    await page.emulateMedia({ reducedMotion: "reduce" });
+    await page.goto("/hasard");
+    await expect(page.locator(".counter-n")).toHaveText("150");
+  });
+
+  test("écouter et délibérer : la légende de la scène", async ({ page }) => {
+    await page.goto("/ecouter");
+    await expect(page.locator(".cap")).toContainText(
+      "Climat · Valérie Masson-Delmotte",
+    );
+    await page.goto("/deliberer");
+    await expect(page.locator(".cap")).toContainText("En petits groupes");
+  });
+});

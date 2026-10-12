@@ -507,6 +507,74 @@
   border-color: var(--fg);
 }
 
+/* Calques posés sur la scène */
+.ov {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  padding: clamp(14px, 2.4vw, 28px);
+}
+.ov button,
+.ov input,
+.ov label {
+  pointer-events: auto;
+}
+.counter {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.counter-n {
+  font-weight: 300;
+  font-size: clamp(2rem, 1.3rem + 2.2vw, 3.5rem);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  font-variant-numeric: tabular-nums;
+}
+.counter-l {
+  font-size: var(--t-small);
+  color: var(--muted);
+}
+.counter-u {
+  font-size: var(--t-label);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: 6px;
+}
+.corner {
+  position: absolute;
+  right: clamp(14px, 2.4vw, 28px);
+  bottom: clamp(14px, 2.4vw, 28px);
+}
+.ghost {
+  min-height: var(--cible);
+  background: color-mix(in srgb, var(--bg) 72%, transparent);
+  border: 1px solid var(--line);
+  color: var(--fg);
+  border-radius: 99px;
+  padding: 0 16px;
+  font: 500 var(--t-small) / 1 var(--f-sans);
+  cursor: pointer;
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+}
+.cap {
+  margin: 0;
+  font-size: var(--t-small);
+  color: var(--muted);
+}
+.cap-k {
+  font-size: var(--t-label);
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--hi);
+  margin-right: 8px;
+}
+.cap-t {
+  color: var(--fg);
+}
+
 /* Navigation (a) : segments indicatifs, Précédent, Sommaire « n / 8 », Suivant */
 .nav {
   border-top: 1px solid var(--line);

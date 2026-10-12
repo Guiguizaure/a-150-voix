@@ -12,7 +12,9 @@ import { scene as sceneDe } from "@/lib/guide";
 import { Engine } from "@/scene/core/engine";
 import { intro } from "@/scene/formations";
 import { creerScenes } from "@/scene/scenes";
+import { brancherMoteur } from "@/scene/commandes";
 import { sortieScene } from "@/scene/store";
+import { Calques } from "./calques";
 import { usePalette } from "./ThemeToggle";
 
 const MOUVEMENT_REDUIT = "(prefers-reduced-motion: reduce)";
@@ -37,6 +39,7 @@ export function Stage() {
     });
     e.enregistrer(creerScenes(e));
     moteur.current = e;
+    brancherMoteur(e);
 
     let dpr = 1;
     const mesurer = () => {
@@ -92,6 +95,7 @@ export function Stage() {
       desabonner();
       e.commande({ type: "son", actif: false });
       moteur.current = null;
+      brancherMoteur(null);
     };
   }, []);
 
@@ -108,11 +112,14 @@ export function Stage() {
   }, [palette]);
 
   return (
-    <canvas
-      ref={canvas}
-      className="scene"
-      data-scene={sceneVoulue}
-      aria-hidden="true"
-    />
+    <>
+      <canvas
+        ref={canvas}
+        className="scene"
+        data-scene={sceneVoulue}
+        aria-hidden="true"
+      />
+      <Calques scene={sceneVoulue} />
+    </>
   );
 }
