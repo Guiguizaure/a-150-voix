@@ -3,14 +3,17 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "build": "next build && tsx scripts/finalize-headers.ts",
+    "build": "tsx scripts/check-content.ts && next build && tsx scripts/finalize-headers.ts",
     "lint": "eslint",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "e2e": "playwright test",
     "serve:out": "PORT=4330 node e2e/static-server.mjs",
     "check": "pnpm lint && pnpm typecheck && pnpm test",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "typo": "tsx scripts/typo.ts",
+    "sources": "tsx scripts/sources.ts",
+    "check-content": "tsx scripts/check-content.ts"
   },
   "dependencies": {
     "next": "16.3.8",
