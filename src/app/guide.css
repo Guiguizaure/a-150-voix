@@ -692,6 +692,29 @@ input[type="range"]:focus-visible {
   max-width: 300px;
 }
 
+.legend {
+  list-style: none;
+  margin: 12px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 5px;
+  font-size: var(--t-small);
+  color: var(--fg);
+}
+.legend i {
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+.legend .full {
+  background: var(--accent);
+}
+.legend .hollow {
+  border: 1.5px solid color-mix(in srgb, var(--fg) 60%, transparent);
+}
+
 /* Navigation (a) : segments indicatifs, Précédent, Sommaire « n / 8 », Suivant */
 .nav {
   border-top: 1px solid var(--line);

@@ -4,10 +4,13 @@ import type { Engine, Scene } from "../core/engine";
 import type { Son } from "../sound/accord";
 import { accord } from "./accord";
 import { deliberer } from "./deliberer";
+import { democratie } from "./democratie";
 import { dilemme } from "./dilemme";
 import { ecouter } from "./ecouter";
 import { hasard } from "./hasard";
 import { intro } from "./intro";
+import { soutenir } from "./soutenir";
+import { suivre } from "./suivre";
 
 export function creerScenes(
   e: Engine,
@@ -20,5 +23,8 @@ export function creerScenes(
     dilemme: dilemme(e),
     deliberer: deliberer(e),
     accord: accord(e, son),
+    suivre: suivre(e),
+    democratie: democratie(e),
+    soutenir: soutenir(e),
   };
 }

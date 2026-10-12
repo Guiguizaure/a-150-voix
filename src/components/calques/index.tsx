@@ -5,7 +5,8 @@ import type { SceneId } from "@content/etapes";
 import { CalqueAccord } from "./Accord";
 import { CalqueDilemme } from "./Dilemme";
 import { CalqueHasard } from "./Hasard";
-import { CalqueDeliberer, CalqueEcouter } from "./Legende";
+import { CalqueDeliberer, CalqueDemocratie, CalqueEcouter } from "./Legende";
+import { CalqueSoutenir } from "./Soutenir";
 
 export function Calques({ scene }: { scene: SceneId }) {
   switch (scene) {
@@ -19,6 +20,10 @@ export function Calques({ scene }: { scene: SceneId }) {
       return <CalqueDeliberer />;
     case "accord":
       return <CalqueAccord />;
+    case "democratie":
+      return <CalqueDemocratie />;
+    case "soutenir":
+      return <CalqueSoutenir />;
     default:
       return null;
   }

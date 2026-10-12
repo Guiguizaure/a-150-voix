@@ -179,3 +179,46 @@ test.describe("s'accorder", () => {
     await expect(son).toHaveAttribute("aria-pressed", "false");
   });
 });
+
+test("une autre démocratie : chaque forme a sa carte et sa légende", async ({
+  page,
+}) => {
+  await page.goto("/democratie");
+  await expect(page.locator(".cap")).toContainText("Convention pour le climat");
+  await page.getByRole("button", { name: "Irlande" }).click();
+  await expect(page.locator(".cap")).toContainText(
+    "99 citoyens et une présidente, puis un référendum",
+  );
+  await expect(page.locator(".demo-card h2")).toHaveText(
+    "Les assemblées citoyennes irlandaises",
+  );
+  await page.getByRole("button", { name: "Athènes" }).click();
+  await expect(page.locator(".cap")).toContainText("un cube blanc");
+});
+
+test("soutenir : le budget et sa répartition sur la scène", async ({
+  page,
+}) => {
+  await page.goto("/soutenir");
+  await expect(page.locator(".ov .counter")).toContainText(
+    "budget estimé de l’assemblée",
+  );
+  await expect(page.locator(".ov .legend li")).toHaveCount(2);
+});
+
+test("chaque étape dessine sa scène", async ({ page }) => {
+  for (const etape of [
+    "suivre",
+    "democratie",
+    "soutenir",
+    "accord",
+    "deliberer",
+  ]) {
+    await page.goto(`/${etape}`);
+    await expect(page.locator("canvas.scene")).toHaveAttribute(
+      "data-scene",
+      etape,
+    );
+    await expect.poll(() => dessine(page)).toBe(true);
+  }
+});
