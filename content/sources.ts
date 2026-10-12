@@ -52,6 +52,12 @@ export const SOURCES = {
     url: "https://www.uncommunaccord.fr/videotheque",
     consulte: "2026-10-12",
   },
+  ucaMandat: {
+    titre: "Le mandat de l’assemblée citoyenne",
+    editeur: "Un commun accord",
+    url: "https://www.uncommunaccord.fr/le-mandat",
+    consulte: "2026-10-12",
+  },
   afp: {
     titre:
       "Présidentielle : lancement d’une assemblée citoyenne pour nourrir le débat démocratique",
@@ -74,6 +80,28 @@ export const SOURCES = {
       "Convention pour le climat : seules 10 % des propositions ont été reprises par le gouvernement",
     editeur: "Reporterre",
     url: "https://reporterre.net/Convention-pour-le-climat-seules-10-des-propositions-ont-ete-reprises-par-le-gouvernement",
+    consulte: "2026-10-12",
+  },
+  reporterreWwf: {
+    titre:
+      "Seules 24 des 149 mesures de la Convention citoyenne pour le climat sont vraiment appliquées",
+    editeur: "Reporterre",
+    url: "https://reporterre.net/Seules-24-des-149-mesures-de-la-Convention-citoyenne-pour-le-climat-sont-vraiment",
+    consulte: "2026-10-12",
+  },
+  elyseeCcc: {
+    titre:
+      "Emmanuel Macron dit oui à 146 propositions de la Convention citoyenne pour le climat !",
+    editeur: "Élysée",
+    url: "https://www.elysee.fr/emmanuel-macron/2020/06/29/le-president-emmanuel-macron-repond-aux-150-citoyens-de-la-convention-citoyenne-pour-le-climat",
+    publie: "2020-06-29",
+    consulte: "2026-10-12",
+  },
+  afpCcc: {
+    titre: "Climat : des 149 propositions des Citoyens aux mesures adoptées",
+    editeur: "L’info durable, avec l’AFP",
+    url: "https://www.linfodurable.fr/politique/climat-des-149-propositions-des-citoyens-aux-mesures-adoptees-24184",
+    publie: "2021-04-15",
     consulte: "2026-10-12",
   },
   macommuneFinDeVie: {
@@ -101,6 +129,29 @@ export const SOURCES = {
     consulte: "2026-10-12",
     langue: "en",
   },
+  citizensAssemblyConvention: {
+    titre: "2013-2014 Convention on the Constitution",
+    editeur: "The Citizens' Assembly (Irlande)",
+    url: "https://citizensassembly.ie/previous-assemblies/2013-2014-convention-on-the-constitution/",
+    consulte: "2026-10-12",
+    langue: "en",
+  },
+  citizensAssemblyInaugurale: {
+    titre:
+      "Inaugural meeting of the Citizens' Assembly takes place at Dublin Castle",
+    editeur: "The Citizens' Assembly (Irlande)",
+    url: "https://citizensassembly.ie/inaugural-meeting-of-the-citizens-assembly-takes-place-at-dublin-castle/",
+    publie: "2016-09-29",
+    consulte: "2026-10-12",
+    langue: "en",
+  },
+  ifesIrlande2018: {
+    titre: "Elections: Irish Referendum 2018",
+    editeur: "IFES Election Guide",
+    url: "https://electionguide.org/elections/id/3086",
+    consulte: "2026-10-12",
+    langue: "en",
+  },
   equalityByLotBelgique: {
     titre: "New permanent sortition assembly in Belgium",
     editeur: "Equality by lot",
@@ -118,6 +169,29 @@ export const SOURCES = {
     publie: "2020-03-27",
     consulte: "2026-10-12",
   },
+  constitutionArticle11: {
+    titre:
+      "Texte intégral de la Constitution du 4 octobre 1958 en vigueur (article 11)",
+    editeur: "Conseil constitutionnel",
+    url: "https://www.conseil-constitutionnel.fr/le-bloc-de-constitutionnalite/texte-integral-de-la-constitution-du-4-octobre-1958-en-vigueur",
+    consulte: "2026-10-12",
+  },
+  publicSenatRip: {
+    titre: "Le référendum d’initiative partagée (RIP) : mode d’emploi",
+    editeur: "Public Sénat",
+    auteur: "Louis Mollier-Sabet",
+    url: "https://www.publicsenat.fr/actualites/politique/le-referendum-d-initiative-partagee-rip-mode-d-emploi-244363",
+    publie: "2023-04-13",
+    consulte: "2026-10-12",
+  },
+  maireInfoRip: {
+    titre:
+      "Le Conseil constitutionnel ferme la porte à un référendum d’initiative partagée sur l’euthanasie",
+    editeur: "Maire info",
+    url: "https://www.maire-info.com/le-conseil-constitutionnel-ferme-la-porte-%C3%A0-un-referendum-d%27initiative-partagee-sur-l%27euthanasie-article2-30908",
+    publie: "2026-06-19",
+    consulte: "2026-10-12",
+  },
   parisBudgetParticipatif: {
     titre:
       "Budget participatif : « Il y a une véritable appropriation par les Parisiens »",
@@ -125,6 +199,38 @@ export const SOURCES = {
     url: "https://www.paris.fr/pages/budget-participatif-il-y-a-une-veritable-appropriation-par-les-parisiens-6083",
     publie: "2018-09-23",
     consulte: "2026-10-12",
+  },
+  parisBudgetFonctionnement: {
+    titre: "Soutenir un projet grâce au Budget Participatif",
+    editeur: "Ville de Paris",
+    url: "https://www.paris.fr/pages/budget-participatif-3980",
+    publie: "2017-03-02",
+    consulte: "2026-10-12",
+  },
+  worldHistoryAthenes: {
+    titre: "Athenian Democracy",
+    editeur: "World History Encyclopedia",
+    auteur: "Mark Cartwright",
+    url: "https://www.worldhistory.org/Athenian_Democracy/",
+    publie: "2018-04-03",
+    consulte: "2026-10-12",
+    langue: "en",
+  },
+  iraaKleroterion: {
+    titre:
+      "Klèrôtèrion. Par le choix des dieux et la main des hommes : recréer le tirage au sort dans l’Athènes démocratique",
+    editeur:
+      "Institut de recherche sur l’architecture antique (CNRS) et École française d’Athènes",
+    url: "https://www.iraa.mom.fr/sites/iraa.mom.fr/files/pdf/KLEROTERION%20PLAQUETTE%20PRESENTATION-FR.pdf",
+    consulte: "2026-10-12",
+  },
+  ocde2020: {
+    titre:
+      "Innovative Citizen Participation and New Democratic Institutions: Catching the Deliberative Wave",
+    editeur: "OCDE, 2020",
+    url: "https://doi.org/10.1787/339306da-en",
+    consulte: "2026-10-12",
+    langue: "en",
   },
 } as const satisfies Record<string, Source>;
 
@@ -303,6 +409,22 @@ export const FAITS = {
     sources: ["ucaDilemmes"],
     verifie: RELU,
   },
+  ucaSelectionDilemmes: {
+    enonce:
+      "Le comité d’organisation a choisi les six dilemmes parmi 14 propositions soumises à consultation, en respectant au maximum les priorités exprimées par les internautes et par les 150 citoyens.",
+    statut: "verifie",
+    sources: ["ucaDilemmes"],
+    verifie: RELU,
+    extrait:
+      "Respecter au maximum les grandes priorités exprimées par les internautes et les 150 citoyens",
+  },
+  ucaFilRouge: {
+    enonce:
+      "Le fil rouge de l’assemblée : « Au 21ème siècle, pouvons-nous encore espérer tout avoir ? »",
+    statut: "verifie",
+    sources: ["ucaMandat", "ucaDilemmes"],
+    verifie: RELU,
+  },
   ucaSession2: {
     enonce:
       "La deuxième session, les 10 et 11 octobre 2026, présente les six dilemmes, que les citoyens commencent à examiner en petits groupes.",
@@ -378,24 +500,41 @@ export const FAITS = {
   },
   cccConvention: {
     enonce:
-      "La Convention citoyenne pour le climat (2019–2020) a réuni 150 citoyens tirés au sort, qui ont adopté 149 propositions.",
-    statut: "a-reverifier",
-    sources: ["reporterreCcc"],
-    note: REPORTERRE_NON_RELU,
+      "La Convention citoyenne pour le climat a réuni 150 citoyens tirés au sort, qui ont formulé 149 propositions en neuf mois, remises en juin 2020.",
+    statut: "verifie",
+    sources: ["elyseeCcc"],
+    verifie: RELU,
+    extrait: "Neuf mois plus tard, 149 propositions en sont ressorties !",
   },
   cccSansFiltre: {
     enonce:
-      "Le président de la République s’était engagé à soumettre ces propositions « sans filtre ».",
+      "Le président de la République s’était engagé à transmettre ces propositions « sans filtre ».",
+    statut: "verifie",
+    sources: ["elyseeCcc", "afpCcc"],
+    verifie: RELU,
+  },
+  cccDecompteReporterre: {
+    enonce:
+      "Selon Reporterre, 15 propositions seulement ont été reprises sans modification.",
     statut: "a-reverifier",
     sources: ["reporterreCcc"],
     note: REPORTERRE_NON_RELU,
   },
-  cccDecompte: {
+  cccDecompteWwf: {
     enonce:
-      "15 propositions reprises sans modification selon Reporterre ; 75 mesures mises en œuvre selon le gouvernement.",
+      "Selon le WWF, cité par Reporterre, 24 des 149 propositions sont pleinement appliquées.",
     statut: "a-reverifier",
-    sources: ["reporterreCcc"],
-    note: `${REPORTERRE_NON_RELU} Le chiffre de 75 attribué au gouvernement est à retrouver dans l’article ou dans une source gouvernementale.`,
+    sources: ["reporterreWwf"],
+    note: `${REPORTERRE_NON_RELU} Le rapport du WWF lui-même reste à trouver.`,
+  },
+  cccDecompteGouvernement: {
+    enonce:
+      "Le gouvernement affirme avoir repris la quasi-totalité des 149 propositions.",
+    statut: "verifie",
+    sources: ["afpCcc"],
+    verifie: RELU,
+    extrait:
+      "Le gouvernement assure avoir repris la quasi-totalité des 149 propositions de la Convention citoyenne pour le climat",
   },
   finDeVieConvention: {
     enonce:
@@ -414,29 +553,29 @@ export const FAITS = {
   },
   irlandeConvention: {
     enonce:
-      "La Convention sur la Constitution irlandaise (2012–2014) a mené au référendum de 2015 sur le mariage entre personnes de même sexe.",
+      "La Convention sur la Constitution irlandaise (2013–2014) réunissait 66 citoyens tirés au sort, 33 élus et une présidence indépendante ; elle a recommandé d’ouvrir le mariage aux couples de même sexe, approuvé par référendum en 2015 avec 62,1 % de oui.",
     statut: "verifie",
-    sources: ["ersIrlande"],
+    sources: ["citizensAssemblyConvention", "ersIrlande"],
     verifie: RELU,
-  },
-  irlandeConventionChiffres: {
-    enonce:
-      "Cette convention réunissait 66 citoyens tirés au sort et 33 élus ; le référendum de 2015 a recueilli 62 % de oui.",
-    statut: "a-sourcer",
-    sources: [],
+    extrait: "The marriage equality referendum passed by a majority of 62.1 %.",
+    note: "Le prototype datait la convention de 2012 : la résolution qui la crée date de juillet 2012, ses travaux de 2013–2014.",
   },
   irlandeAssemblee: {
     enonce:
-      "L’assemblée citoyenne irlandaise sur l’avortement réunissait 99 citoyens tirés au sort et une présidence nommée par le gouvernement ; ses recommandations ont ouvert la voie au référendum de 2018.",
+      "L’assemblée citoyenne irlandaise (2016–2018) réunissait 99 citoyens tirés au sort et une présidente, la juge Mary Laffoy ; ses recommandations sur l’avortement ont ouvert la voie au référendum de 2018.",
     statut: "verifie",
-    sources: ["ersIrlande"],
+    sources: ["citizensAssemblyInaugurale", "ersIrlande"],
     verifie: RELU,
+    extrait:
+      "The Assembly is a body of made up of the Chairperson, Ms. Justice Mary Laffoy, and 99 citizens",
   },
-  irlandeAssembleeDetails: {
+  irlandeReferendum2018: {
     enonce:
-      "L’assemblée était présidée par une femme ; le référendum de 2018 a recueilli 66 % de oui.",
-    statut: "a-sourcer",
-    sources: [],
+      "Le référendum irlandais du 25 mai 2018 sur l’avortement a recueilli 66,4 % de oui.",
+    statut: "verifie",
+    sources: ["ifesIrlande2018"],
+    verifie: RELU,
+    extrait: "Yes : 1,429,981 (66.40 %)",
   },
   belgiqueDialogue: {
     enonce:
@@ -454,9 +593,12 @@ export const FAITS = {
   },
   ripSeuils: {
     enonce:
-      "Le référendum d’initiative partagée (article 11 de la Constitution, en vigueur depuis 2015) : une proposition d’un cinquième des parlementaires, soutenue par un dixième des électeurs inscrits en neuf mois.",
-    statut: "a-sourcer",
-    sources: [],
+      "Le référendum d’initiative partagée (article 11 de la Constitution, en vigueur depuis 2015) : une proposition de loi d’un cinquième des parlementaires, soutenue par un dixième des électeurs inscrits, recueillis en neuf mois.",
+    statut: "verifie",
+    sources: ["constitutionArticle11", "publicSenatRip"],
+    verifie: RELU,
+    extrait:
+      "à l’initiative d’un cinquième des membres du Parlement, soutenue par un dixième des électeurs inscrits sur les listes électorales",
   },
   ripAdp: {
     enonce:
@@ -467,9 +609,12 @@ export const FAITS = {
     note: "Décision du Conseil constitutionnel n° 2019-1-8 RIP du 26 mars 2020.",
   },
   ripAucunReferendum: {
-    enonce: "Aucun référendum d’initiative partagée n’a encore eu lieu.",
-    statut: "a-reverifier",
-    sources: [],
+    enonce:
+      "Aucune tentative de référendum d’initiative partagée n’a abouti à un référendum (juin 2026).",
+    statut: "verifie",
+    sources: ["maireInfoRip", "publicSenatRip"],
+    verifie: RELU,
+    note: "Le 17 juin 2026, le Conseil constitutionnel a écarté une demande de RIP sur l’aide à mourir ; Maire info rappelle qu’aucune autre tentative n’a abouti depuis la création de la procédure.",
   },
   budgetParticipatifParis: {
     enonce:
@@ -480,22 +625,30 @@ export const FAITS = {
   },
   budgetParticipatifPrincipe: {
     enonce:
-      "Dans un budget participatif, les habitants proposent des projets, puis votent pour choisir ceux qui seront financés.",
-    statut: "a-sourcer",
-    sources: [],
+      "Dans le budget participatif parisien, les habitants proposent des projets d’investissement, puis votent pour choisir ceux qui seront financés.",
+    statut: "verifie",
+    sources: ["parisBudgetFonctionnement"],
+    verifie: RELU,
+    extrait:
+      "Les Parisiens peuvent proposer des projets d’investissement pour leur arrondissement et/ou pour tout Paris.",
   },
   athenes: {
     enonce:
-      "À Athènes, la plupart des magistrats et les 500 membres de la Boulè étaient tirés au sort, parfois avec un klérôtérion ; seuls les hommes libres nés de parents athéniens étaient citoyens.",
-    statut: "a-sourcer",
-    sources: [],
+      "Dans l’Athènes des V^e^ et IV^e^ siècles av. J.-C., les 500 membres de la Boulè et des centaines de magistrats étaient tirés au sort, notamment avec le klèrôtèrion, une stèle de pierre où un cube blanc désignait une rangée de candidats ; le but était de permettre aux citoyens de participer à tour de rôle. Les femmes, les esclaves et les étrangers résidents étaient exclus.",
+    statut: "verifie",
+    sources: ["worldHistoryAthenes", "iraaKleroterion"],
+    verifie: RELU,
+    extrait:
+      "Lorsqu’un cube blanc est extrait, la rangée entière est sélectionnée, soit 5 candidats à la fois.",
+    note: "Le prototype parlait d’une « boule blanche » : ce sont des cubes. « Les hommes libres nés de parents athéniens » est remplacé par ce que disent les sources.",
   },
   critiquesMiniPublics: {
     enonce:
-      "Critiques adressées aux assemblées tirées au sort : pas de mandat électif, participants pas toujours représentatifs, questions qui peuvent orienter les débats, propositions qui dépendent des élus.",
-    statut: "a-sourcer",
-    sources: [],
-    note: "Une ou deux références de recherche sur les mini-publics délibératifs.",
+      "Limites des assemblées tirées au sort : pas de sanction électorale, biais de ceux qui acceptent de participer, poids du cadrage de la question, recommandations le plus souvent consultatives et reprises au choix des autorités.",
+    statut: "verifie",
+    sources: ["ocde2020"],
+    verifie: RELU,
+    note: "Rapport de l’OCDE, version anglaise : biais d’auto-sélection (p. 14 et 40), cadrage de la question (p. 78 et 85-86), recommandations consultatives (p. 86) et reprises « à la carte » (p. 105), responsabilité sans élection (p. 144).",
   },
 } as const satisfies Record<string, Fait>;
 

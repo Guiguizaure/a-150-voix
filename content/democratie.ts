@@ -29,7 +29,7 @@ export const FORMES = [
     texte:
       "La Convention citoyenne pour le climat a réuni 150 citoyens tirés au sort, qui ont adopté 149 propositions. Le président de la République s’était engagé à les soumettre « sans filtre ». Sur la fin de vie, 184 citoyens se sont prononcés à 75 % pour ouvrir une aide active à mourir. Une loi sur l’aide à mourir a été adoptée en juillet 2026.",
     limite:
-      "Combien de propositions climat ont été reprises ? Le décompte fait débat : 15 sans modification selon Reporterre, 75 mesures mises en œuvre selon le gouvernement.",
+      "Combien de propositions ont été reprises ? Les décomptes divergent : 15 sans modification selon Reporterre, 24 pleinement appliquées selon le WWF, quand le gouvernement affirme en avoir repris la quasi-totalité.",
     legende: [
       "Convention pour le climat",
       "149 propositions adoptées par les citoyens",
@@ -39,14 +39,16 @@ export const FORMES = [
       "cccSansFiltre",
       "finDeVieConvention",
       "finDeVieLoi",
-      "cccDecompte",
+      "cccDecompteReporterre",
+      "cccDecompteWwf",
+      "cccDecompteGouvernement",
     ],
   },
   {
     id: "irlande",
     bouton: "Irlande",
     titre: "Les assemblées citoyennes irlandaises",
-    quand: "2012–2018",
+    quand: "2013–2018",
     texte:
       "Une convention réunissant 66 citoyens tirés au sort et 33 élus a recommandé d’ouvrir le mariage aux couples de même sexe, approuvé par référendum en 2015 avec 62 % de oui. Puis 99 citoyens tirés au sort ont travaillé sur l’avortement. Leurs recommandations ont ouvert la voie au référendum de 2018, gagné avec 66 % de oui.",
     limite:
@@ -56,12 +58,7 @@ export const FORMES = [
       "99 citoyens et une présidente, puis un référendum",
     ],
     etiquettes: { referendum: "référendum" },
-    faits: [
-      "irlandeConvention",
-      "irlandeConventionChiffres",
-      "irlandeAssemblee",
-      "irlandeAssembleeDetails",
-    ],
+    faits: ["irlandeConvention", "irlandeAssemblee", "irlandeReferendum2018"],
   },
   {
     id: "belgique",
@@ -113,10 +110,10 @@ export const FORMES = [
     titre: "Le tirage au sort à Athènes",
     quand: "V^e^ et IV^e^ siècles av. J.-C.",
     texte:
-      "Dans l’Athènes antique, la plupart des magistrats et les 500 membres du Conseil, la Boulè, étaient tirés au sort parmi les citoyens, parfois à l’aide d’une machine en pierre, le klérôtérion. L’idée : que chacun gouverne et soit gouverné à tour de rôle.",
+      "Dans l’Athènes antique, les 500 membres du Conseil, la Boulè, et des centaines de magistrats étaient tirés au sort parmi les citoyens, parfois à l’aide d’une machine en pierre, le klèrôtèrion. L’idée : permettre à tous les citoyens de participer à la vie politique à tour de rôle.",
     limite:
-      "Seuls les hommes libres nés de parents athéniens étaient citoyens. Les femmes, les esclaves et les étrangers étaient exclus.",
-    legende: ["Klérôtérion", "une boule blanche, une rangée tirée au sort"],
+      "Seuls les citoyens, des hommes, participaient. Les femmes, les esclaves et les étrangers résidents étaient exclus.",
+    legende: ["Klèrôtèrion", "un cube blanc, une rangée tirée au sort"],
     faits: ["athenes"],
   },
 ] as const satisfies readonly Forme[];

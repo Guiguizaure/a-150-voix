@@ -2,8 +2,9 @@
 //
 // Neutralité : les deux options d'un exemple ont la même structure (étiquette, ce qu'on
 // gagne, ce qu'on accepte) et des longueurs proches. Un test le vérifie (règle de
-// longueur : écart de 25 % et de deux mots au plus, champ par champ).
-import type { ACompleter, Texte } from "./types";
+// longueur : écart de 25 % et de deux mots au plus, champ par champ). Les six dilemmes
+// officiels n'ont pas d'options rédigées : le curseur garde les exemples de la FAQ.
+import type { Texte } from "./types";
 
 export interface Option {
   readonly etiquette: string;
@@ -87,18 +88,14 @@ export function verdict(intensite: Intensite, option: Option): string {
 }
 
 export interface Dilemme extends Texte {
-  /** Étiquette courte. */
+  /** Étiquette courte. La question officielle, mot pour mot, est dans `texte`. */
   readonly theme: string;
-  /** La question officielle est dans `texte`. */
 }
 
 export const DILEMMES_TITRE = "Les six dilemmes retenus";
 
-/**
- * Liste finale publiée le 10 octobre 2026, dans l'ordre des organisateurs. Les deux
- * dilemmes absents du prototype restent à compléter jusqu'à validation de la liste.
- */
-export const DILEMMES: readonly (Dilemme | ACompleter)[] = [
+/** Liste finale publiée le 10 octobre 2026, mot pour mot et dans l'ordre des organisateurs. */
+export const DILEMMES = [
   {
     theme: "Alimentation",
     texte:
@@ -116,12 +113,35 @@ export const DILEMMES: readonly (Dilemme | ACompleter)[] = [
       "Peut-on s’affranchir rapidement des carburants fossiles sans contraindre la liberté de déplacement ?",
     faits: ["ucaSixDilemmes"],
   },
-  { aCompleter: true, indication: "Dilemme à compléter" },
-  { aCompleter: true, indication: "Dilemme à compléter" },
+  {
+    theme: "Territoires",
+    texte:
+      "Peut-on aménager et développer les territoires tout en préservant les espaces naturels ?",
+    faits: ["ucaSixDilemmes"],
+  },
+  {
+    theme: "Eau",
+    texte:
+      "Peut-on continuer à consommer de l’eau comme avant, alors que les sécheresses se multiplient ?",
+    faits: ["ucaSixDilemmes"],
+  },
   {
     theme: "Réindustrialisation",
     texte:
       "Doit-on réindustrialiser le pays quitte à en assumer les coûts économiques et environnementaux ?",
     faits: ["ucaSixDilemmes"],
   },
-];
+] as const satisfies readonly Dilemme[];
+
+/** Le fil rouge des six dilemmes, cité avec sa source. */
+export const FIL_ROUGE: Texte = {
+  texte:
+    "Leur fil rouge, selon [le mandat de l’assemblée](https://www.uncommunaccord.fr/le-mandat) : « Au 21ème siècle, pouvons-nous encore espérer tout avoir ? »",
+  faits: ["ucaFilRouge"],
+};
+
+export const SELECTION: Texte = {
+  texte:
+    "Ils ont été choisis par le comité d’organisation parmi 14 propositions soumises à consultation, en tenant compte des priorités des internautes et des 150 citoyens.",
+  faits: ["ucaSelectionDilemmes"],
+};
