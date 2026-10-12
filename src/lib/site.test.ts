@@ -24,8 +24,8 @@ describe("lancement", () => {
 
   it("prend l'adresse Pages par défaut, sans barre finale", () => {
     expect(siteUrl({})).toBe(DEFAULT_SITE_URL);
-    expect(siteUrl({ SITE_URL: "https://a150voix.fr/" })).toBe(
-      "https://a150voix.fr",
+    expect(siteUrl({ SITE_URL: "https://preview.example/" })).toBe(
+      "https://preview.example",
     );
   });
 
@@ -38,9 +38,9 @@ describe("lancement", () => {
 
   it("les ouvre au lancement, avec le sitemap", () => {
     expect(robotsMeta(true)).toEqual({ index: true, follow: true });
-    expect(robotsFile(true, "https://a150voix.fr")).toEqual({
+    expect(robotsFile(true, "https://preview.example")).toEqual({
       rules: { userAgent: "*", allow: "/" },
-      sitemap: "https://a150voix.fr/sitemap.xml",
+      sitemap: "https://preview.example/sitemap.xml",
     });
   });
 });

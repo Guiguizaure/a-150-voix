@@ -4,10 +4,11 @@ import type { Metadata, MetadataRoute } from "next";
 export const SITE_NAME = "À 150 voix";
 
 /**
- * Adresse publique du site (images de partage, sitemap) : l'adresse Cloudflare Pages du
- * projet tant que le domaine final n'est pas branché. Surchargée par la variable SITE_URL.
+ * Adresse publique du site (adresses canoniques, sitemap, images de partage, mentions
+ * légales) : le domaine final. Les previews restent sur a-150-voix.pages.dev, en noindex.
+ * Surchargée par la variable SITE_URL.
  */
-export const DEFAULT_SITE_URL = "https://a-150-voix.pages.dev";
+export const DEFAULT_SITE_URL = "https://150voix.com";
 
 type Env = Record<string, string | undefined>;
 
