@@ -1,0 +1,10 @@
+# En-têtes Cloudflare Pages, copiés dans out/ par next build. Les tests de bout en bout servent
+# l'export avec ces en-têtes (e2e/static-server.mjs).
+#
+# Préversion : tant que SITE_LAUNCHED=1 n'est pas posée (production publique), toutes les pages
+# portent X-Robots-Tag: noindex. scripts/finalize-headers.ts retire ce bloc de out/_headers au
+# lancement ; ne pas renommer ses deux bornes.
+# >>> préversion
+/*
+  X-Robots-Tag: noindex, nofollow
+# <<< préversion

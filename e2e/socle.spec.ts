@@ -20,3 +20,15 @@ test("une adresse inconnue répond 404", async ({ page, consoleErrors }) => {
   expect(response?.status()).toBe(404);
   await expect(page.locator("html")).toHaveAttribute("lang", "fr");
 });
+
+test("la préversion est en noindex partout", async ({ page, request }) => {
+  const response = await page.goto("/");
+  expect(response?.headers()["x-robots-tag"]).toBe("noindex, nofollow");
+  await expect(page.locator('meta[name="robots"]')).toHaveAttribute(
+    "content",
+    "noindex, nofollow",
+  );
+  const robots = await request.get("/robots.txt");
+  expect(robots.ok()).toBe(true);
+  expect(await robots.text()).toMatch(/User-Agent: \*\nDisallow: \/\n/);
+});
