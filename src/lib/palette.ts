@@ -12,6 +12,9 @@ export interface Palette {
   readonly accent: string;
   /** Texte d'accent : italiques, numéros, texte du canvas (contraste ≥ 4,5:1). */
   readonly hi: string;
+  /** Bouton plein « Soutenir sur Ulule » : fond Lampe dans les deux palettes, texte foncé. */
+  readonly cta: string;
+  readonly ctaTexte: string;
 }
 
 export const PALETTES: Record<PaletteId, Palette> = {
@@ -21,6 +24,8 @@ export const PALETTES: Record<PaletteId, Palette> = {
     muted: "#958f84",
     accent: "#f1d06b",
     hi: "#f6dc8a",
+    cta: "#f1d06b",
+    ctaTexte: "#0e1014",
   },
   papier: {
     bg: "#ece5d5",
@@ -28,6 +33,8 @@ export const PALETTES: Record<PaletteId, Palette> = {
     muted: "#675f53",
     accent: "#956f00",
     hi: "#785800",
+    cta: "#f1d06b",
+    ctaTexte: "#1c1b1f",
   },
 };
 

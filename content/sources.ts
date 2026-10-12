@@ -462,6 +462,14 @@ export const FAITS = {
     sources: ["uncommunaccord"],
     verifie: RELU,
   },
+  ucaPriseEnCharge: {
+    enonce:
+      "Des surcoûts comme la garde d’enfants ou les pertes de revenus professionnels peuvent être pris en charge pour certains publics, afin que des personnes de tous horizons puissent participer dans de bonnes conditions.",
+    statut: "verifie",
+    sources: ["uncommunaccord"],
+    verifie: RELU,
+    note: "FAQ « A quoi servira le budget d’Un commun accord ? ».",
+  },
   ucaContribuer: {
     enonce:
       "On peut soutenir le projet par un don, même d’un euro symbolique, relayer avec le kit de communication et s’inscrire à la lettre d’information.",

@@ -122,7 +122,7 @@ test("les commandes font au moins 44 px", async ({ page }) => {
     await waitForAnimations(page);
     const petites = await page
       .locator(
-        ".topbar a, .topbar button, .nav a, .nav button, .chip, .btn, .toc a, .cta, .links a, .foot-links a, .ov button",
+        ".topbar a, .topbar button, .nav a, .nav button, .chip, .cta-soutien, .actions a, .toc a, .cta, .links a, .foot-links a, .ov button",
       )
       .evaluateAll((els) =>
         els

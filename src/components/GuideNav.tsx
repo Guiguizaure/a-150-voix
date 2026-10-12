@@ -8,6 +8,7 @@ import { useRef } from "react";
 import { ETAPES, PARTIES, type Partie } from "@content/etapes";
 import { INTERFACE } from "@content/interface";
 import { adresse, chemin, rang, TOTAL } from "@/lib/guide";
+import { Fleche } from "./Fleche";
 
 const T = INTERFACE.nav;
 const NNBSP = " ";
@@ -57,8 +58,8 @@ export function GuideNav() {
               : `${T.precedent}${NNBSP}: ${precedent ? precedent.court : INTERFACE.accueil}`
           }
         >
-          <span className="fleche" aria-hidden="true">
-            ←
+          <span className="fleche">
+            <Fleche sens="gauche" />
           </span>
           <span className="lbl">{T.precedent}</span>
         </Link>
@@ -87,8 +88,8 @@ export function GuideNav() {
           aria-label={`${libelleSuivant}${NNBSP}: ${suivant ? suivant.court : INTERFACE.accueil}`}
         >
           <span className="lbl">{libelleSuivant}</span>
-          <span className="fleche" aria-hidden="true">
-            →
+          <span className="fleche">
+            <Fleche sens="droite" />
           </span>
         </Link>
       </div>

@@ -1,28 +1,38 @@
-// Étape 8 : liens pour soutenir et ce que paie le budget.
-import { BOUTONS_SOUTENIR, POSTES_BUDGET } from "@content/etapes";
-import { Lien } from "../Markup";
+// Étape 8 : une seule action en bouton plein (Ulule), les autres en liens, ce que paie le
+// budget en quelques lignes concrètes, puis l'invitation finale.
+import { SOUTENIR } from "@content/etapes";
+import { Fleche } from "../Fleche";
+import { Lien, Markup } from "../Markup";
 
 export function BlocSoutenir() {
+  const S = SOUTENIR;
   return (
     <>
-      <div className="btn-row">
-        {BOUTONS_SOUTENIR.map((b) => (
-          <Lien
-            key={b.href}
-            href={b.href}
-            className={b.principal ? "btn primary" : "btn"}
-          >
-            {b.texte}
-            {b.principal && <span aria-hidden="true"> ↗</span>}
-          </Lien>
-        ))}
-      </div>
-      <h2 className="k-label">{POSTES_BUDGET.titre}</h2>
-      <ul className="tags">
-        {POSTES_BUDGET.postes.map((p) => (
-          <li key={p}>{p}</li>
+      <Lien href={S.principal.href} className="cta-soutien">
+        {S.principal.texte}
+        <Fleche sens="sortie" />
+      </Lien>
+      <ul className="actions">
+        {S.liens.map((l) => (
+          <li key={l.texte}>
+            <Lien href={l.href}>
+              {l.texte}
+              <Fleche sens="droite" className="actions-fleche" />
+            </Lien>
+          </li>
         ))}
       </ul>
+      <h2 className="k-label">{S.budget.titre}</h2>
+      <ul className="budget">
+        {S.budget.lignes.map((l) => (
+          <li key={l.cle}>
+            <em>{l.cle}</em> <Markup texte={l.texte} />
+          </li>
+        ))}
+      </ul>
+      <p className="cloture">
+        <Markup texte={S.cloture.texte} />
+      </p>
     </>
   );
 }

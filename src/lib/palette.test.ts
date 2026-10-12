@@ -29,6 +29,7 @@ describe.each(
       AA_TEXT,
     );
     expect(contrast(p.bg, p.fg)).toBeGreaterThanOrEqual(AA_TEXT);
+    expect(contrast(p.ctaTexte, p.cta)).toBeGreaterThanOrEqual(AA_TEXT);
   });
 
   it("graphiques au moins à 3:1 (accent, siège vide à 60 %)", () => {

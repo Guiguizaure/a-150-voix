@@ -10,6 +10,8 @@
   --muted: #958f84;
   --accent: #f1d06b;
   --hi: #f6dc8a;
+  --cta: #f1d06b;
+  --ctaTexte: #0e1014;
   --line: color-mix(in srgb, var(--fg) 13%, transparent);
   --body: color-mix(in srgb, var(--fg) 86%, var(--bg));
   color-scheme: dark;
@@ -31,6 +33,8 @@
   --muted: #675f53;
   --accent: #956f00;
   --hi: #785800;
+  --cta: #f1d06b;
+  --ctaTexte: #1c1b1f;
   --line: color-mix(in srgb, var(--fg) 14%, transparent);
   color-scheme: light;
 }

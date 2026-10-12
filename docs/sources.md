@@ -7,7 +7,7 @@ Fichier généré par `pnpm sources` depuis `content/sources.ts`, qui fait foi :
 - à sourcer : 0
 - à revérifier : 1
 - calcul : 1
-- vérifié : 45
+- vérifié : 46
 - emplacements à compléter : 0
 
 La mise en ligne publique (`STRICT=1` ou `SITE_LAUNCHED=1`) exige zéro fait à sourcer ou à revérifier et zéro emplacement à compléter.
@@ -252,6 +252,15 @@ Les donateurs signent une charte des financeurs qui les engage à ne pas interve
 Le budget paie le transport, l’hébergement et les repas, les indemnités, le tirage au sort, l’animation, les salles, l’équipe, la plateforme, la communication et, pour certains publics, la garde d’enfants.
 
 - Relu le 2026-10-12
+- Sources :
+  - [Un commun accord, l’assemblée citoyenne pour 2027 (accueil et FAQ)](https://www.uncommunaccord.fr/) : Un commun accord, consulté le 2026-10-12.
+
+### `ucaPriseEnCharge`
+
+Des surcoûts comme la garde d’enfants ou les pertes de revenus professionnels peuvent être pris en charge pour certains publics, afin que des personnes de tous horizons puissent participer dans de bonnes conditions.
+
+- Relu le 2026-10-12
+- Note : FAQ « A quoi servira le budget d’Un commun accord ? ».
 - Sources :
   - [Un commun accord, l’assemblée citoyenne pour 2027 (accueil et FAQ)](https://www.uncommunaccord.fr/) : Un commun accord, consulté le 2026-10-12.
 

@@ -396,26 +396,52 @@ export const LIENS = {
   kit: "https://drive.google.com/drive/folders/1aDIoYR94G_uyjUiKqcTipe1Dwjcri7Cc",
 } as const;
 
-export const BOUTONS_SOUTENIR = [
-  { texte: "Soutenir sur Ulule", href: LIENS.ulule, principal: true },
-  { texte: "Suivre les travaux", href: LIENS.newsletter, principal: false },
-  { texte: "Kit pour relayer", href: LIENS.kit, principal: false },
-] as const;
-
-export const POSTES_BUDGET = {
-  titre: "Ce que paie le budget",
-  postes: [
-    "Transport, hébergement, repas",
-    "Indemnités des citoyens",
-    "Garde d’enfants",
-    "Tirage au sort",
-    "Animation des débats",
-    "Location des salles",
-    "Équipe du projet",
-    "Plateforme en ligne",
-    "Communication",
+/** Étape 8 : la seule action en bouton plein, puis les autres en liens. */
+export const SOUTENIR = {
+  principal: { texte: "Soutenir sur Ulule", href: LIENS.ulule },
+  liens: [
+    { texte: "Regarder les auditions en replay", href: LIENS.videotheque },
+    // Pas d'adresse publique propre à la plateforme : on renvoie à l'accueil du site.
+    { texte: "Donner votre avis sur les dilemmes", href: LIENS.officiel },
+    { texte: "Recevoir les nouvelles de l’assemblée", href: LIENS.newsletter },
+    { texte: "Relayer autour de vous", href: LIENS.kit },
   ],
-  faits: ["ucaPostes"],
+  budget: {
+    titre: "Ce que paie le budget",
+    lignes: [
+      {
+        cle: "102,16 €",
+        texte: "par jour et par citoyen : l’indemnité d’un juré d’assises.",
+        faits: ["ucaIndemnite"],
+      },
+      {
+        cle: "Six week-ends",
+        texte:
+          "à Paris pour 150 personnes venues de toute la France, Nouvelle-Calédonie comprise : transport, hébergement, repas.",
+        faits: [
+          "ucaCalendrier",
+          "ucaTirage150",
+          "afpParticipants",
+          "ucaPostes",
+        ],
+      },
+      {
+        cle: "La garde d’enfants",
+        texte:
+          "et les pertes de revenus peuvent être prises en charge, pour que tout le monde puisse participer.",
+        faits: ["ucaPriseEnCharge"],
+      },
+      {
+        cle: "L’animation",
+        texte: "des débats et la plateforme ouverte à tous.",
+        faits: ["ucaPostes", "ucaPlateforme"],
+      },
+    ],
+  },
+  cloture: {
+    texte: "150 *voix*. Et la vôtre ?",
+    faits: ["ucaTirage150"],
+  },
 } as const;
 
 export const LIENS_SUIVRE = [

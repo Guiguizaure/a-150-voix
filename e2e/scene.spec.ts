@@ -227,3 +227,23 @@ test("chaque étape dessine sa scène", async ({ page }) => {
     await expect.poll(() => dessine(page)).toBe(true);
   }
 });
+
+test("soutenir : un seul bouton plein, quatre actions, la ligne de clôture", async ({
+  page,
+}) => {
+  await page.goto("/soutenir");
+  const cta = page.locator(".cta-soutien");
+  await expect(cta).toHaveCount(1);
+  await expect(cta).toContainText("Soutenir sur Ulule");
+  const h = (await cta.boundingBox())!.height;
+  expect(Math.round(h)).toBeGreaterThanOrEqual(52);
+  await expect(page.locator(".actions a")).toHaveText([
+    /Regarder les auditions en replay/,
+    /Donner votre avis sur les dilemmes/,
+    /Recevoir les nouvelles de l’assemblée/,
+    /Relayer autour de vous/,
+  ]);
+  await expect(page.locator(".budget li")).toHaveCount(4);
+  await expect(page.locator(".cloture")).toHaveText("150 voix. Et la vôtre ?");
+  await expect(page.locator(".cloture em")).toHaveText("voix");
+});
