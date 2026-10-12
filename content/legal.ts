@@ -31,7 +31,7 @@ export const MENTIONS = {
   donnees: "Cookies et données personnelles",
   donneesTexte: [
     "Ce site ne dépose **aucun cookie** et ne collecte **aucune donnée personnelle** : pas de compte, pas de formulaire, pas de publicité, pas de traceur, rien n’est enregistré quand vous utilisez les curseurs.",
-    "La fréquentation est mesurée avec [Cloudflare Web Analytics](https://www.cloudflare.com/web-analytics/), un outil **sans cookie** qui ne collecte pas de donnée personnelle et ne suit pas les visiteurs d’un site à l’autre.",
+    "La fréquentation est mesurée avec [Cloudflare Web Analytics](https://www.cloudflare.com/web-analytics/), un outil **sans cookie** ni stockage dans le navigateur, qui ne cherche pas à identifier les visiteurs (pas d’empreinte numérique).",
     "Comme tout hébergeur, Cloudflare traite les données techniques nécessaires pour acheminer les pages et protéger le site, selon sa [politique de confidentialité](https://www.cloudflare.com/privacypolicy/).",
     "Seul votre choix de palette (Nuit ou Papier) est gardé dans le stockage local de votre navigateur, sur votre appareil ; il n’est jamais transmis.",
   ],

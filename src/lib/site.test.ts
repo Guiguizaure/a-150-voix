@@ -74,6 +74,9 @@ describe("en-têtes", () => {
     expect(launched).not.toMatch(/^\s+X-Robots-Tag:/m);
     expect(launched).not.toContain("préversion\n/*");
     expect(launched.startsWith("# En-têtes Cloudflare Pages")).toBe(true);
+    expect(launched).toMatch(
+      /^ {2}Content-Security-Policy: default-src 'self';/m,
+    );
   });
 
   it("refuse un fichier sans bloc de préversion", () => {

@@ -24,6 +24,10 @@ test("une adresse inconnue répond 404", async ({ page, consoleErrors }) => {
 test("la préversion est en noindex partout", async ({ page, request }) => {
   const response = await page.goto("/");
   expect(response?.headers()["x-robots-tag"]).toBe("noindex, nofollow");
+  const csp = response?.headers()["content-security-policy"] ?? "";
+  expect(csp).toContain("default-src 'self'");
+  expect(csp).toContain("frame-ancestors 'none'");
+  expect(response?.headers()["x-content-type-options"]).toBe("nosniff");
   await expect(page.locator('meta[name="robots"]')).toHaveAttribute(
     "content",
     "noindex, nofollow",
