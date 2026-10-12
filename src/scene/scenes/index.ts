@@ -2,6 +2,7 @@
 import type { SceneId } from "@content/etapes";
 import type { Engine, Scene } from "../core/engine";
 import { deliberer } from "./deliberer";
+import { dilemme } from "./dilemme";
 import { ecouter } from "./ecouter";
 import { hasard } from "./hasard";
 import { intro } from "./intro";
@@ -11,6 +12,7 @@ export function creerScenes(e: Engine): Partial<Record<SceneId, Scene>> {
     intro: intro(e),
     hasard: hasard(e),
     ecouter: ecouter(e),
+    dilemme: dilemme(e),
     deliberer: deliberer(e),
   };
 }

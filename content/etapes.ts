@@ -325,6 +325,9 @@ export const SCENES = {
     optionA: "Option A",
     optionB: "Option B",
     curseur: "Position du curseur entre l’option A et l’option B",
+    /** Position lue par les lecteurs d'écran ; {option} et {n} remplacés. */
+    positionCentre: "Au centre, entre les deux options",
+    positionVers: "Vers « {option} », {n} sur 100",
     exemples: "Exemples de dilemmes",
   },
   deliberer: {

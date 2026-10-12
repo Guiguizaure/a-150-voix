@@ -36,8 +36,8 @@ export const CLES_TECHNIQUES = new Set([
   "consulte",
 ]);
 
-/** Textes où un chiffre n'est pas une affirmation (estimation du guide lui-même). */
-export const CLES_SANS_FAIT = new Set(["dureeLecture"]);
+/** Textes où un chiffre n’affirme rien (estimation du guide, valeur d’un curseur). */
+export const CLES_SANS_FAIT = new Set(["dureeLecture", "positionVers"]);
 
 /** Le nom du site contient un chiffre sans rien affirmer. */
 export const NOM_DU_SITE = /À[\s\u00a0]150[\s\u00a0]\*?voix\*?/g;

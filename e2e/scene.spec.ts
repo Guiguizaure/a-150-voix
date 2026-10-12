@@ -86,3 +86,66 @@ test.describe("calques", () => {
     await expect(page.locator(".cap")).toContainText("En petits groupes");
   });
 });
+
+test.describe("le dilemme", () => {
+  test("le curseur au clavier fait pencher le verdict, avec la même phrase des deux côtés", async ({
+    page,
+  }) => {
+    await page.goto("/dilemme");
+    const verdict = page.locator(".verdict p");
+    await expect(verdict).toContainText("Les deux comptent.");
+    const curseur = page.getByRole("slider", {
+      name: "Position du curseur entre l’option A et l’option B",
+    });
+    await curseur.focus();
+    await page.keyboard.press("End");
+    await expect(verdict).toContainText(
+      "Vous penchez nettement vers « Des voitures françaises, plus coûteuses ».",
+    );
+    await expect(verdict).toContainText(
+      "Vous gagnez des emplois industriels en France.",
+    );
+    await page.keyboard.press("Home");
+    await expect(verdict).toContainText(
+      "Vous penchez nettement vers « Des voitures importées, moins chères ».",
+    );
+    await expect(verdict).toContainText(
+      "Vous acceptez moins d’emplois industriels en France.",
+    );
+  });
+
+  test("changer d'exemple remet le nœud au centre", async ({ page }) => {
+    await page.goto("/dilemme");
+    await page.getByRole("slider").focus();
+    await page.keyboard.press("End");
+    await page.getByRole("button", { name: "Déplacements" }).click();
+    await expect(
+      page.getByRole("button", { name: "Déplacements" }),
+    ).toHaveAttribute("aria-pressed", "true");
+    await expect(page.locator(".pole-l")).toContainText(
+      "Préserver la liberté de se déplacer",
+    );
+    await expect(page.locator(".verdict p")).toContainText(
+      "Les deux comptent.",
+    );
+    await expect(page.getByRole("slider")).toHaveValue("0");
+  });
+
+  test("on fait glisser le nœud sur la scène", async ({ page }) => {
+    await page.goto("/dilemme");
+    const scene = page.locator("canvas.scene");
+    const box = (await scene.boundingBox())!;
+    await page.mouse.move(box.x + box.width / 2, box.y + box.height * 0.5);
+    await page.mouse.down();
+    await page.mouse.move(box.x + box.width * 0.2, box.y + box.height * 0.5, {
+      steps: 5,
+    });
+    await page.mouse.up();
+    await expect(page.locator(".verdict p")).toContainText(
+      "Vous penchez nettement vers",
+    );
+    await expect(page.locator(".verdict p")).toContainText(
+      "Des voitures importées",
+    );
+  });
+});

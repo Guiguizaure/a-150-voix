@@ -12,7 +12,8 @@ import { scene as sceneDe } from "@/lib/guide";
 import { Engine } from "@/scene/core/engine";
 import { intro } from "@/scene/formations";
 import { creerScenes } from "@/scene/scenes";
-import { brancherMoteur } from "@/scene/commandes";
+import { vDepuisX } from "@/scene/scenes/dilemme";
+import { brancherMoteur, commander } from "@/scene/commandes";
 import { sortieScene } from "@/scene/store";
 import { Calques } from "./calques";
 import { usePalette } from "./ThemeToggle";
@@ -111,6 +112,18 @@ export function Stage() {
     moteur.current?.setPalette(PALETTES[palette]);
   }, [palette]);
 
+  // Le dilemme : on fait glisser le nœud sur la scène (le curseur du calque en est
+  // l'équivalent au clavier). Le défilement vertical reste possible au doigt.
+  const glisse = useRef(false);
+  const glisser = (ev: React.PointerEvent<HTMLCanvasElement>) => {
+    const r = ev.currentTarget.getBoundingClientRect();
+    commander({
+      type: "dilemme",
+      v: vDepuisX(ev.clientX - r.left, r.width, r.height),
+    });
+  };
+  const dilemme = sceneVoulue === "dilemme";
+
   return (
     <>
       <canvas
@@ -118,6 +131,21 @@ export function Stage() {
         className="scene"
         data-scene={sceneVoulue}
         aria-hidden="true"
+        onPointerDown={(ev) => {
+          if (!dilemme) return;
+          glisse.current = true;
+          ev.currentTarget.setPointerCapture?.(ev.pointerId);
+          glisser(ev);
+        }}
+        onPointerMove={(ev) => {
+          if (dilemme && glisse.current) glisser(ev);
+        }}
+        onPointerUp={() => {
+          glisse.current = false;
+        }}
+        onPointerCancel={() => {
+          glisse.current = false;
+        }}
       />
       <Calques scene={sceneVoulue} />
     </>
