@@ -2,12 +2,16 @@ import type { Metadata } from "next";
 import { SOURCES_PAGE as T } from "@content/legal";
 import { FAITS, SOURCES, type Fait, type Source } from "@content/sources";
 import { Lien, Markup } from "@/components/Markup";
+import { pageMetadata } from "@/lib/site";
+import { INTERFACE } from "@content/interface";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: T.titre,
   description: T.description,
-  alternates: { canonical: "/sources" },
-};
+  path: "/sources",
+  image: "accueil",
+  alt: INTERFACE.partage.accueil,
+});
 
 const date = new Intl.DateTimeFormat("fr-FR", {
   dateStyle: "long",

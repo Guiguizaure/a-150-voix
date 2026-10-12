@@ -74,3 +74,39 @@ test("les pages hors du guide gardent leur mise en page", async ({ page }) => {
     "solid",
   );
 });
+
+test("chaque page a son image de partage, servie par le site", async ({
+  page,
+  request,
+}) => {
+  for (const [adresse, image] of [
+    ["/", "accueil"],
+    ["/hasard", "hasard"],
+    ["/soutenir", "soutenir"],
+    ["/sources", "accueil"],
+  ] as const) {
+    await page.goto(adresse);
+    const og = page.locator('meta[property="og:image"]');
+    await expect(og).toHaveAttribute(
+      "content",
+      new RegExp(`/og/${image}\\.png$`),
+    );
+    await expect(page.locator('meta[name="twitter:card"]')).toHaveAttribute(
+      "content",
+      "summary_large_image",
+    );
+    await expect(page.locator('link[rel="canonical"]')).toHaveAttribute(
+      "href",
+      /150voix\.com/,
+    );
+    const png = await request.get(`/og/${image}.png`);
+    expect(png.ok()).toBe(true);
+    expect(png.headers()["content-type"]).toBe("image/png");
+  }
+});
+
+test("sitemap vide tant que le site n'est pas lancé", async ({ request }) => {
+  const r = await request.get("/sitemap.xml");
+  expect(r.ok()).toBe(true);
+  expect(await r.text()).not.toContain("<url>");
+});

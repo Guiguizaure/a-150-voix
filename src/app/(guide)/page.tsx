@@ -4,11 +4,15 @@ import { ACCUEIL, ETAPES, PARTIES, SCENES, type Partie } from "@content/etapes";
 import { Markup } from "@/components/Markup";
 import { chemin } from "@/lib/guide";
 import { plainText } from "@/lib/markup";
+import { pageMetadata } from "@/lib/site";
+import { INTERFACE } from "@content/interface";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   description: plainText(ACCUEIL.description.texte),
-  alternates: { canonical: "/" },
-};
+  path: "/",
+  image: "accueil",
+  alt: INTERFACE.partage.accueil,
+});
 
 export default function Accueil() {
   return (

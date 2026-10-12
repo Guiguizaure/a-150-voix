@@ -12,8 +12,17 @@ export const DEFAULT_SITE_URL = "https://150voix.com";
 
 type Env = Record<string, string | undefined>;
 
+/**
+ * Adresse du site pour ce build : SITE_URL si elle est posée ; sinon, sur une preview
+ * Cloudflare Pages (branche autre que main), l'adresse de ce déploiement, pour que les
+ * aperçus de lien montrent les images de la preview ; sinon le domaine final.
+ */
 export function siteUrl(env: Env = process.env): string {
-  return (env.SITE_URL || DEFAULT_SITE_URL).replace(/\/+$/, "");
+  const preview =
+    env.CF_PAGES_BRANCH && env.CF_PAGES_BRANCH !== "main"
+      ? env.CF_PAGES_URL
+      : undefined;
+  return (env.SITE_URL || preview || DEFAULT_SITE_URL).replace(/\/+$/, "");
 }
 
 /**
@@ -62,4 +71,60 @@ export function finalHeaders(source: string, launched: boolean): string {
   }
   if (!launched) return source;
   return [...lines.slice(0, start), ...lines.slice(end + 1)].join("\n");
+}
+
+/** Image de partage : une par page du guide, générée au build (scripts/og.ts). */
+export const OG = { width: 1200, height: 630 } as const;
+
+/** Pages publiques, pour le sitemap au lancement. */
+export function sitemapEntries(
+  launched: boolean,
+  base: string,
+  chemins: readonly string[],
+): MetadataRoute.Sitemap {
+  if (!launched) return [];
+  return chemins.map((c) => ({ url: c === "/" ? base : `${base}${c}` }));
+}
+
+/**
+ * Métadonnées d'une page : titre, description, adresse canonique, aperçu de partage (Open
+ * Graph et carte large) avec l'image de la page.
+ */
+export function pageMetadata({
+  title,
+  description,
+  path,
+  image,
+  alt,
+}: {
+  title?: string;
+  description: string;
+  path: string;
+  image: string;
+  alt: string;
+}): Metadata {
+  const fullTitle = title ? `${title} · ${SITE_NAME}` : SITE_NAME;
+  const images = [
+    { url: `/og/${image}.png`, width: OG.width, height: OG.height, alt },
+  ];
+  return {
+    ...(title ? { title } : {}),
+    description,
+    alternates: { canonical: path },
+    openGraph: {
+      type: "website",
+      locale: "fr_FR",
+      siteName: SITE_NAME,
+      title: fullTitle,
+      description,
+      url: path,
+      images,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: fullTitle,
+      description,
+      images,
+    },
+  };
 }

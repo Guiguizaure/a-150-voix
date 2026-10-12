@@ -1,12 +1,16 @@
 import type { Metadata } from "next";
 import { EDITEUR, HEBERGEUR, MENTIONS } from "@content/legal";
 import { Lien, Markup } from "@/components/Markup";
+import { pageMetadata } from "@/lib/site";
+import { INTERFACE } from "@content/interface";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: MENTIONS.titre,
   description: MENTIONS.description,
-  alternates: { canonical: "/mentions-legales" },
-};
+  path: "/mentions-legales",
+  image: "accueil",
+  alt: INTERFACE.partage.accueil,
+});
 
 function Paragraphes({ textes }: { textes: readonly string[] }) {
   return textes.map((t) => (

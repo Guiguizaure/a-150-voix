@@ -2,6 +2,8 @@ import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 import {
   DEFAULT_SITE_URL,
+  pageMetadata,
+  sitemapEntries,
   finalHeaders,
   isLaunched,
   robotsFile,
@@ -26,6 +28,20 @@ describe("lancement", () => {
     expect(siteUrl({})).toBe(DEFAULT_SITE_URL);
     expect(siteUrl({ SITE_URL: "https://preview.example/" })).toBe(
       "https://preview.example",
+    );
+  });
+
+  it("sur une preview Cloudflare, prend l'adresse du déploiement", () => {
+    const preview = {
+      CF_PAGES_BRANCH: "v1",
+      CF_PAGES_URL: "https://abc.a-150-voix.pages.dev",
+    };
+    expect(siteUrl(preview)).toBe("https://abc.a-150-voix.pages.dev");
+    expect(siteUrl({ ...preview, CF_PAGES_BRANCH: "main" })).toBe(
+      DEFAULT_SITE_URL,
+    );
+    expect(siteUrl({ ...preview, SITE_URL: "https://150voix.com" })).toBe(
+      "https://150voix.com",
     );
   });
 
@@ -67,5 +83,36 @@ describe("en-têtes", () => {
     expect(() =>
       finalHeaders("# <<< préversion\n# >>> préversion\n", true),
     ).toThrow(/introuvable/);
+  });
+});
+
+describe("partage et sitemap", () => {
+  it("sitemap vide avant le lancement, complet après", () => {
+    expect(
+      sitemapEntries(false, "https://150voix.com", ["/", "/hasard"]),
+    ).toEqual([]);
+    expect(
+      sitemapEntries(true, "https://150voix.com", ["/", "/hasard"]),
+    ).toEqual([
+      { url: "https://150voix.com" },
+      { url: "https://150voix.com/hasard" },
+    ]);
+  });
+
+  it("chaque page a son image de partage et sa carte large", () => {
+    const m = pageMetadata({
+      title: "Le hasard",
+      description: "Desc.",
+      path: "/hasard",
+      image: "hasard",
+      alt: "Alt",
+    });
+    expect(m.alternates?.canonical).toBe("/hasard");
+    expect(m.openGraph).toMatchObject({
+      title: "Le hasard · À 150 voix",
+      locale: "fr_FR",
+      images: [{ url: "/og/hasard.png", width: 1200, height: 630, alt: "Alt" }],
+    });
+    expect(m.twitter).toMatchObject({ card: "summary_large_image" });
   });
 });

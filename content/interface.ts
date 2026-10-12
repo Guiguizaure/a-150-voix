@@ -10,6 +10,13 @@ export const INTERFACE = {
   nouvelOnglet: "nouvel onglet",
   limite: "Limite.",
   sessionPassee: "Session passée :",
+  partage: {
+    accueil:
+      "À 150 voix, guide indépendant sur l’assemblée citoyenne Un commun accord : 150 points, un par citoyen tiré au sort.",
+    faits: ["ucaTirage150"],
+    /** {n} et {titre} remplacés. */
+    etape: "À 150 voix, étape {n} : {titre}",
+  },
   son: {
     libelle: "Son",
     titre: "Le son accompagne l’étape « S’accorder »",
