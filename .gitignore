@@ -35,3 +35,6 @@ next-env.d.ts
 *.pem
 npm-debug.log*
 .pnpm-debug.log*
+
+# Images de partage, générées au build (scripts/og.ts)
+/public/og/
