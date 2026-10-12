@@ -62,7 +62,7 @@ export const ACCUEIL = {
 
 const SOURCES_SUIVRE: Texte = {
   texte:
-    "Ce guide est un projet indépendant, sans lien avec les organisateurs d’Un commun accord. Sources : site et FAQ d’Un commun accord, dépêche AFP du 19 septembre 2026.",
+    "Sources : site et FAQ d’Un commun accord, dépêche AFP du 19 septembre 2026.",
   faits: ["afpParticipants"],
 };
 
@@ -277,7 +277,7 @@ export const ETAPES = [
     paragraphes: [
       {
         texte:
-          "Réunir 150 personnes venues de toute la France pendant six week-ends coûte environ 3 millions d’euros, soit à peu près 20 000 € par citoyen, tout compris.",
+          "Réunir 150 personnes venues de toute la France pendant six week-ends coûte environ 3 millions d’euros, soit à peu près 20 000 € par citoyen, tout compris.",
         faits: ["ucaTirage150", "ucaBudget", "coutParCitoyen"],
       },
       {

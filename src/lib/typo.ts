@@ -47,6 +47,7 @@ function fixText(t: string): string {
       // Milliers : 200 000, 1 093 030.
       .replace(/(\d)[ \u00A0](?=\d{3}(?!\d))/g, `$1${NNBSP}`)
       .replace(/(\d)[ \u00A0\u202F]?(%|€|M€|Md€)/g, `$1${NBSP}$2`)
+      .replace(/(\d) (millions?|milliards?)\b/g, `$1${NBSP}$2`)
       .replace(/«[ \u00A0\u202F]?/g, `«${NBSP}`)
       .replace(/[ \u00A0\u202F]?»/g, `${NBSP}»`)
       .replace(/(\S)[ \u00A0\u202F]?([;!?])(?=[\s»)*]|$)/g, `$1${NNBSP}$2`)

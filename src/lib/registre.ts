@@ -39,6 +39,9 @@ export const CLES_TECHNIQUES = new Set([
 /** Textes où un chiffre n'est pas une affirmation (estimation du guide lui-même). */
 export const CLES_SANS_FAIT = new Set(["dureeLecture"]);
 
+/** Le nom du site contient un chiffre sans rien affirmer. */
+export const NOM_DU_SITE = /À[\s\u00a0]150[\s\u00a0]\*?voix\*?/g;
+
 export interface TexteTrouve {
   readonly chemin: string;
   readonly cle: string;

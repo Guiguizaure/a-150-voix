@@ -57,8 +57,21 @@ export function acceptDocument404(errors: string[]): void {
   if (index >= 0) errors.splice(index, 1);
 }
 
+/** Attend la fin des animations finies (entrée des étapes), pour mesurer l'état stable. */
+export async function waitForAnimations(page: Page): Promise<void> {
+  await page.evaluate(() =>
+    Promise.all(
+      document
+        .getAnimations()
+        .filter((a) => a.effect?.getComputedTiming().endTime !== Infinity)
+        .map((a) => a.finished.catch(() => undefined)),
+    ),
+  );
+}
+
 /** Aucune violation axe, critères WCAG 2.2 A et AA (proches du RGAA AA). */
 export async function expectNoAxeViolations(page: Page): Promise<void> {
+  await waitForAnimations(page);
   const results = await new AxeBuilder({ page })
     .withTags(["wcag2a", "wcag2aa", "wcag21a", "wcag21aa", "wcag22aa"])
     .analyze();

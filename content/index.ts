@@ -3,6 +3,7 @@ import { EXEMPLES, verdict, type Intensite } from "./dilemmes";
 import * as dilemmes from "./dilemmes";
 import * as democratie from "./democratie";
 import * as etapes from "./etapes";
+import { INTERFACE } from "./interface";
 import * as sessions from "./sessions";
 
 const INTENSITES: readonly Intensite[] = ["neutre", "plutot", "nettement"];
@@ -18,4 +19,5 @@ export const CONTENU = {
   dilemmes: { ...dilemmes, verdicts: VERDICTS },
   democratie,
   sessions,
+  interface: INTERFACE,
 } as const;

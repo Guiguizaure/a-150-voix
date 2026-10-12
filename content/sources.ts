@@ -442,7 +442,7 @@ export const FAITS = {
 
   // Financement
   ucaBudget: {
-    enonce: "Le budget de l’assemblée est estimé à 3 millions d’euros.",
+    enonce: "Le budget de l’assemblée est estimé à 3 millions d’euros.",
     statut: "verifie",
     sources: ["uncommunaccord"],
     verifie: RELU,

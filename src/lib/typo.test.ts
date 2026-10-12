@@ -25,6 +25,7 @@ describe("fixTypo", () => {
       `20${NNBSP}000${NBSP}€ et 76${NBSP}%`,
     );
     expect(fixTypo("≈ 3 M€")).toBe(`≈ 3${NBSP}M€`);
+    expect(fixTypo("environ 3 millions")).toBe(`environ 3${NBSP}millions`);
   });
 
   it("ne groupe pas des nombres voisins qui n'en forment pas un", () => {

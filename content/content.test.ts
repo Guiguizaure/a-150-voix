@@ -6,6 +6,7 @@ import { parseMarkup, plainText, strayMarks } from "@/lib/markup";
 import {
   aCompleter,
   CLES_SANS_FAIT,
+  NOM_DU_SITE,
   estStrict,
   faitsCites,
   sourcesMarkdown,
@@ -37,7 +38,12 @@ describe("faits", () => {
     const orphelins = affiches
       .filter((t) => !CLES_SANS_FAIT.has(t.cle))
       .filter((t) =>
-        /\d/.test(plainText(t.valeur).replace(/https:\/\/\S+/g, "")),
+        /\d/.test(
+          plainText(t.valeur.replace(NOM_DU_SITE, "")).replace(
+            /https:\/\/\S+/g,
+            "",
+          ),
+        ),
       )
       .filter((t) => t.faits.length === 0)
       .map((t) => `${t.chemin} : ${t.valeur}`);

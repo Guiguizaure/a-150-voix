@@ -238,7 +238,7 @@ La deuxième session, les 10 et 11 octobre 2026, présente les six dilemmes, que
 
 ### `ucaBudget`
 
-Le budget de l’assemblée est estimé à 3 millions d’euros.
+Le budget de l’assemblée est estimé à 3 millions d’euros.
 
 - Extrait : « un budget estimé à 3 000 000 d’euros »
 - Relu le 2026-10-12
