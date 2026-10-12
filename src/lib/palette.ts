@@ -1,6 +1,6 @@
-// Palettes validées : Nuit (défaut) et Papier (claire), accent Lampe. Source unique des
-// couleurs : globals.css en reprend les valeurs (vérifié par palette.test.ts), le canvas les
-// lit ici. L'accent ne sert jamais de couleur de texte : le texte d'accent est en `hi`.
+// Palettes validées : Nuit (défaut, même si le système est en clair) et Papier (claire, au
+// choix), accent Lampe. Source unique des couleurs : globals.css en reprend les valeurs
+// (vérifié par palette.test.ts), le canvas les lit ici. L'accent ne sert jamais de couleur de texte : le texte d'accent est en `hi`.
 
 export type PaletteId = "nuit" | "papier";
 
@@ -31,7 +31,7 @@ export const PALETTES: Record<PaletteId, Palette> = {
   },
 };
 
-/** Clé du choix manuel dans localStorage (prioritaire sur le réglage du système). */
+/** Clé du choix de palette dans localStorage (Nuit par défaut). */
 export const PALETTE_KEY = "a150-palette";
 
 export function estPalette(v: unknown): v is PaletteId {
@@ -39,8 +39,7 @@ export function estPalette(v: unknown): v is PaletteId {
 }
 
 /**
- * Script inline posé dans <head>, avant le premier rendu : applique le choix manuel
- * enregistré. Sans choix (ou sans JavaScript), la feuille de style suit
- * prefers-color-scheme.
+ * Script inline posé dans <head>, avant le premier rendu : applique le choix enregistré.
+ * Sans choix (ou sans JavaScript), la palette est Nuit, quel que soit le système.
  */
 export const PALETTE_SCRIPT = `try{var p=localStorage.getItem(${JSON.stringify(PALETTE_KEY)});if(p==="nuit"||p==="papier")document.documentElement.dataset.palette=p}catch(e){}`;

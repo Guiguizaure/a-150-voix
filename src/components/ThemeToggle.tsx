@@ -1,28 +1,21 @@
 "use client";
 
-// Bouton à deux états Nuit / Papier. Sans choix manuel, la palette suit le système ; le choix
-// manuel est gardé dans localStorage (s'il est disponible) et prime sur le système.
+// Bouton à deux états Nuit / Papier. Nuit par défaut, quel que soit le réglage du système ;
+// le choix de Papier est gardé dans localStorage (s'il est disponible).
 import { useSyncExternalStore } from "react";
 import { INTERFACE } from "@content/interface";
 import { estPalette, PALETTE_KEY, type PaletteId } from "@/lib/palette";
 
 const CHANGE = "a150:palette";
-const clair = () => window.matchMedia("(prefers-color-scheme: light)");
 
 function effective(): PaletteId {
   const choix = document.documentElement.dataset.palette;
-  if (estPalette(choix)) return choix;
-  return clair().matches ? "papier" : "nuit";
+  return estPalette(choix) ? choix : "nuit";
 }
 
 function subscribe(cb: () => void) {
-  const mq = clair();
-  mq.addEventListener("change", cb);
   window.addEventListener(CHANGE, cb);
-  return () => {
-    mq.removeEventListener("change", cb);
-    window.removeEventListener(CHANGE, cb);
-  };
+  return () => window.removeEventListener(CHANGE, cb);
 }
 
 export function choisirPalette(p: PaletteId) {

@@ -13,11 +13,8 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  colorScheme: "dark light",
-  themeColor: [
-    { media: "(prefers-color-scheme: dark)", color: PALETTES.nuit.bg },
-    { media: "(prefers-color-scheme: light)", color: PALETTES.papier.bg },
-  ],
+  colorScheme: "dark",
+  themeColor: PALETTES.nuit.bg,
 };
 
 export default function RootLayout({

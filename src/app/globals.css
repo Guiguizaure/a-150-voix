@@ -1,8 +1,8 @@
 @import "tailwindcss";
 @import "./guide.css";
 
-/* Palettes : Nuit par défaut, Papier si le système est en clair (sauf choix manuel Nuit) ou
-   si on l'a choisie (data-palette, posé par le script de <head> et le bouton de l'en-tête).
+/* Palettes : Nuit par défaut, quel que soit le réglage du système ; Papier quand on la
+   choisit (data-palette, posé par le script de <head> et le bouton de l'en-tête).
    Valeurs reprises de src/lib/palette.ts (vérifié par un test). */
 :root {
   --bg: #0e1014;
@@ -23,18 +23,6 @@
   --t-label: 0.7rem;
   --gut: clamp(16px, 3.2vw, 56px);
   --cible: 44px;
-}
-
-@media (prefers-color-scheme: light) {
-  :root:not([data-palette="nuit"]) {
-    --bg: #ece5d5;
-    --fg: #1c1b1f;
-    --muted: #675f53;
-    --accent: #956f00;
-    --hi: #785800;
-    --line: color-mix(in srgb, var(--fg) 14%, transparent);
-    color-scheme: light;
-  }
 }
 
 :root[data-palette="papier"] {

@@ -8,9 +8,15 @@ import {
 
 const ADRESSES = ["/", ...ETAPES.map((e) => `/${e.slug}`)];
 
-for (const palette of ["dark", "light"] as const) {
-  test.describe(`palette ${palette === "dark" ? "Nuit" : "Papier"}`, () => {
-    test.use({ colorScheme: palette });
+for (const palette of ["nuit", "papier"] as const) {
+  test.describe(`palette ${palette === "nuit" ? "Nuit" : "Papier"}`, () => {
+    test.beforeEach(async ({ page }) => {
+      await page.addInitScript((p) => {
+        try {
+          localStorage.setItem("a150-palette", p);
+        } catch {}
+      }, palette);
+    });
 
     for (const adresse of ADRESSES) {
       test(`${adresse} : un titre, sans violation axe`, async ({ page }) => {
@@ -73,23 +79,29 @@ test("le Sommaire s'ouvre en dialogue et mène à l'étape choisie", async ({
 });
 
 test.describe("palette", () => {
-  test("suit le système, puis le choix manuel, gardé au rechargement", async ({
+  test("Nuit par défaut, même si le système est en clair ; Papier au clic, gardée au rechargement", async ({
     page,
   }) => {
     await page.emulateMedia({ colorScheme: "light" });
     await page.goto("/");
     const bouton = page.getByRole("button", { name: "Palette claire" });
-    await expect(bouton).toHaveAttribute("aria-pressed", "true");
     const fond = () =>
       page.evaluate(() => getComputedStyle(document.body).backgroundColor);
-    await expect.poll(fond).toBe("rgb(236, 229, 213)");
+    await expect(bouton).toHaveAttribute("aria-pressed", "false");
+    await expect.poll(fond).toBe("rgb(14, 16, 20)");
 
     await bouton.click();
-    await expect(bouton).toHaveAttribute("aria-pressed", "false");
-    await expect(page.locator("html")).toHaveAttribute("data-palette", "nuit");
+    await expect(bouton).toHaveAttribute("aria-pressed", "true");
+    await expect(page.locator("html")).toHaveAttribute(
+      "data-palette",
+      "papier",
+    );
     await page.reload();
-    await expect(page.locator("html")).toHaveAttribute("data-palette", "nuit");
-    await expect.poll(fond).toBe("rgb(14, 16, 20)");
+    await expect(page.locator("html")).toHaveAttribute(
+      "data-palette",
+      "papier",
+    );
+    await expect.poll(fond).toBe("rgb(236, 229, 213)");
   });
 });
 
