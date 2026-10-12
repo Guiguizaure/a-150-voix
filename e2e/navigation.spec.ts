@@ -1,9 +1,10 @@
-import { expect, test } from "./fixtures";
+import { attendreHydratation, expect, test } from "./fixtures";
 
 test("les flèches du clavier changent d'étape et donnent le focus au titre", async ({
   page,
 }) => {
   await page.goto("/hasard");
+  await attendreHydratation(page);
   await page.locator("body").press("ArrowRight");
   await expect(page).toHaveURL(/\/ecouter$/);
   const titre = page.getByRole("heading", { level: 1 });
@@ -44,6 +45,7 @@ test("balayer le texte vers la gauche passe à l'étape suivante", async ({
   // WebKit ne permet pas de fabriquer un Touch depuis la page : geste testé sur Chromium.
   test.skip(browserName === "webkit", "Touch non constructible dans WebKit");
   await page.goto("/hasard");
+  await attendreHydratation(page);
   await page.locator(".panel").evaluate((panel) => {
     const point = (x: number) =>
       new Touch({ identifier: 1, target: panel, clientX: x, clientY: 600 });

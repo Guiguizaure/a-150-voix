@@ -68,6 +68,17 @@ export function acceptDocument404(errors: string[]): void {
   if (index >= 0) errors.splice(index, 1);
 }
 
+/**
+ * Attend que la page soit hydratée (écouteurs du clavier et du balayage branchés) : le
+ * canvas de la scène est redimensionné dans le même passage que ces écouteurs.
+ */
+export async function attendreHydratation(page: Page): Promise<void> {
+  await page.waitForFunction(() => {
+    const cv = document.querySelector<HTMLCanvasElement>("canvas.scene");
+    return !!cv && cv.width !== 300;
+  });
+}
+
 /** Attend la fin des animations finies (entrée des étapes), pour mesurer l'état stable. */
 export async function waitForAnimations(page: Page): Promise<void> {
   await page.evaluate(() =>

@@ -2,6 +2,7 @@
 // horizontal, et captures de chaque page (jointes au rapport, à relire à l'œil).
 import { ETAPES } from "../content/etapes";
 import {
+  attendreHydratation,
   expect,
   expectNoAxeViolations,
   test,
@@ -91,6 +92,7 @@ test.describe("clavier", () => {
     page,
   }) => {
     await page.goto("/");
+    await attendreHydratation(page);
     for (const e of ETAPES) {
       await page.keyboard.press("ArrowRight");
       await expect(page).toHaveURL(new RegExp(`/${e.slug}$`));
