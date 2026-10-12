@@ -1,0 +1,37 @@
+# Références de conception (prototype) : jamais versionnées ni déployées.
+/_references/
+
+# Dépendances
+/node_modules
+/.pnp
+.pnp.*
+
+# Next.js
+/.next/
+/out/
+next-env.d.ts
+*.tsbuildinfo
+
+# Tests
+/coverage
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+
+# Fichiers temporaires (captures de vérification, scripts jetables)
+.tmp/
+
+# Secrets et environnement
+.env*
+.dev.vars
+.dev.vars.*
+
+# Cloudflare (wrangler)
+.wrangler/
+
+# Divers
+.DS_Store
+*.pem
+npm-debug.log*
+.pnpm-debug.log*
