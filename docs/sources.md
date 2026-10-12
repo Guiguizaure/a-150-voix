@@ -5,23 +5,12 @@ Fichier généré par `pnpm sources` depuis `content/sources.ts`, qui fait foi :
 ## Bilan
 
 - à sourcer : 0
-- à revérifier : 1
+- à revérifier : 0
 - calcul : 1
-- vérifié : 46
+- vérifié : 47
 - emplacements à compléter : 0
 
 La mise en ligne publique (`STRICT=1` ou `SITE_LAUNCHED=1`) exige zéro fait à sourcer ou à revérifier et zéro emplacement à compléter.
-
-## Faits à revérifier
-
-### `afpPresidentielle`
-
-L’élection présidentielle a lieu les 18 avril et 2 mai 2027.
-
-- Extrait : « des 18 avril et 2 mai »
-- Note : Dates à revérifier au décret de convocation des électeurs.
-- Sources :
-  - [Présidentielle : lancement d’une assemblée citoyenne pour nourrir le débat démocratique](https://www.linfodurable.fr/presidentielle-lancement-dune-assemblee-citoyenne-pour-nourrir-le-debat-democratique-59048) : L’info durable, dépêche AFP, publié le 2026-09-19, consulté le 2026-10-12.
 
 ## Faits calculés
 
@@ -219,6 +208,17 @@ La deuxième session, les 10 et 11 octobre 2026, présente les six dilemmes, que
 - Relu le 2026-10-12
 - Sources :
   - [« Un commun accord » : découvrez le programme de la deuxième session de l’assemblée citoyenne](https://www.uncommunaccord.fr/actualites/decouvrez-le-programme-deuxieme-session) : Un commun accord, publié le 2026-10-09, consulté le 2026-10-12.
+
+### `afpPresidentielle`
+
+L’élection présidentielle a lieu les 18 avril et 2 mai 2027.
+
+- Extrait : « le dimanche 18 avril 2027 pour le premier tour ; le dimanche 2 mai 2027 pour le second tour »
+- Relu le 2026-10-12
+- Note : Dates arrêtées par le Conseil des ministres du 1er juillet 2026. Le décret de convocation des électeurs, attendu fin janvier 2027 (au plus tard le 7 février), n’est pas encore paru : à revérifier à sa publication.
+- Sources :
+  - [Les dates de l’élection présidentielle de 2027 sont annoncées](https://www.service-public.gouv.fr/particuliers/actualites/A15053) : Service-Public.fr (Direction de l’information légale et administrative), publié le 2026-07-02, consulté le 2026-10-12.
+  - [Présidentielle : lancement d’une assemblée citoyenne pour nourrir le débat démocratique](https://www.linfodurable.fr/presidentielle-lancement-dune-assemblee-citoyenne-pour-nourrir-le-debat-democratique-59048) : L’info durable, dépêche AFP, publié le 2026-09-19, consulté le 2026-10-12.
 
 ### `ucaBudget`
 
@@ -457,6 +457,7 @@ Limites des assemblées tirées au sort : pas de sanction électorale, biais de
 - [Les auditions des experts](https://www.uncommunaccord.fr/videotheque) : Un commun accord, consulté le 2026-10-12.
 - [Le mandat de l’assemblée citoyenne](https://www.uncommunaccord.fr/le-mandat) : Un commun accord, consulté le 2026-10-12.
 - [Présidentielle : lancement d’une assemblée citoyenne pour nourrir le débat démocratique](https://www.linfodurable.fr/presidentielle-lancement-dune-assemblee-citoyenne-pour-nourrir-le-debat-democratique-59048) : L’info durable, dépêche AFP, publié le 2026-09-19, consulté le 2026-10-12.
+- [Les dates de l’élection présidentielle de 2027 sont annoncées](https://www.service-public.gouv.fr/particuliers/actualites/A15053) : Service-Public.fr (Direction de l’information légale et administrative), publié le 2026-07-02, consulté le 2026-10-12.
 - [78 % des Français n’ont pas confiance dans la politique, selon le baromètre Cevipof](https://www.publicsenat.fr/actualitudes/politique/78-des-francais-nont-pas-confiance-en-la-politique-selon-le-barometre-de-cevipof) : Public Sénat, Guillaume Cros, publié le 2026-02-10, consulté le 2026-10-12.
 - [Convention pour le climat : seules 10 % des propositions ont été reprises par le gouvernement](https://reporterre.net/Convention-pour-le-climat-seules-10-des-propositions-ont-ete-reprises-par-le-gouvernement) : Reporterre, consulté le 2026-10-12.
 - [Emmanuel Macron dit oui à 146 propositions de la Convention citoyenne pour le climat !](https://www.elysee.fr/emmanuel-macron/2020/06/29/le-president-emmanuel-macron-repond-aux-150-citoyens-de-la-convention-citoyenne-pour-le-climat) : Élysée, publié le 2020-06-29, consulté le 2026-10-12.

@@ -66,6 +66,14 @@ export const SOURCES = {
     publie: "2026-09-19",
     consulte: "2026-10-12",
   },
+  servicePublicPresidentielle: {
+    titre: "Les dates de l’élection présidentielle de 2027 sont annoncées",
+    editeur:
+      "Service-Public.fr (Direction de l’information légale et administrative)",
+    url: "https://www.service-public.gouv.fr/particuliers/actualites/A15053",
+    publie: "2026-07-02",
+    consulte: "2026-10-12",
+  },
   publicSenatCevipof: {
     titre:
       "78 % des Français n’ont pas confiance dans la politique, selon le baromètre Cevipof",
@@ -425,10 +433,12 @@ export const FAITS = {
   },
   afpPresidentielle: {
     enonce: "L’élection présidentielle a lieu les 18 avril et 2 mai 2027.",
-    statut: "a-reverifier",
-    sources: ["afp"],
-    extrait: "des 18 avril et 2 mai",
-    note: "Dates à revérifier au décret de convocation des électeurs.",
+    statut: "verifie",
+    sources: ["servicePublicPresidentielle", "afp"],
+    verifie: RELU,
+    extrait:
+      "le dimanche 18 avril 2027 pour le premier tour ; le dimanche 2 mai 2027 pour le second tour",
+    note: "Dates arrêtées par le Conseil des ministres du 1er juillet 2026. Le décret de convocation des électeurs, attendu fin janvier 2027 (au plus tard le 7 février), n’est pas encore paru : à revérifier à sa publication.",
   },
 
   // Financement
