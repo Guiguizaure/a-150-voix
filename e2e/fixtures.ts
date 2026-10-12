@@ -6,6 +6,16 @@ import { test as base, expect, type Page } from "@playwright/test";
  * Content-Security-Policy, etc.). Le détail est joint au rapport (`erreurs-console.txt`).
  * Repris de Le poids des choses.
  */
+/**
+ * WebKit signale comme erreur (« due to access control checks ») les préchargements de
+ * Next.js (requêtes _rsc) annulés quand la page change : ce n'est pas une erreur du site.
+ */
+function prechargementAnnule(texte: string): boolean {
+  return /Fetch API cannot load .*_rsc=.* due to access control checks/.test(
+    texte,
+  );
+}
+
 export const test = base.extend<{ consoleErrors: string[] }>({
   consoleErrors: [
     async ({ page }, use, testInfo) => {
@@ -24,18 +34,20 @@ export const test = base.extend<{ consoleErrors: string[] }>({
         // axe-core lit un petit canvas avec getImageData ; sous charge, WebKit refuse parfois.
         if (/^Unable to get image data from canvas\./.test(message.text()))
           return;
+        if (prechargementAnnule(message.text())) return;
         const { url, lineNumber, columnNumber } = message.location();
         record(message.text(), [
           `console.error : ${message.text()}`,
           `emplacement : ${url || "(inconnu)"}:${lineNumber}:${columnNumber}`,
         ]);
       });
-      page.on("pageerror", (error) =>
+      page.on("pageerror", (error) => {
+        if (prechargementAnnule(error.message)) return;
         record(error.message, [
           `exception : ${error.name}: ${error.message}`,
           `pile :\n${error.stack ?? ""}`,
-        ]),
-      );
+        ]);
+      });
       await use(errors);
       if (details.length > 0) {
         await testInfo.attach("erreurs-console.txt", {

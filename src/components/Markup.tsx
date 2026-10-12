@@ -1,5 +1,6 @@
 // Rendu du mini-balisage du contenu (src/lib/markup.ts). Les liens sortants s'ouvrent dans
 // un nouvel onglet, annoncé aux lecteurs d'écran.
+import Link from "next/link";
 import { Fragment } from "react";
 import { INTERFACE } from "@content/interface";
 import { parseMarkup } from "@/lib/markup";
@@ -38,6 +39,13 @@ export function Lien({
   children: React.ReactNode;
   className?: string;
 }) {
+  if (href.startsWith("/")) {
+    return (
+      <Link href={href} className={className}>
+        {children}
+      </Link>
+    );
+  }
   if (!/^https?:\/\//.test(href)) {
     return (
       <a href={href} className={className}>

@@ -34,6 +34,9 @@ export const CLES_TECHNIQUES = new Set([
   "verifie",
   "publie",
   "consulte",
+  "siret",
+  "codePostal",
+  "email",
 ]);
 
 /** Textes où un chiffre n’affirme rien (estimation du guide, valeur d’un curseur). */

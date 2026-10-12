@@ -8,7 +8,7 @@ import { Lien, Markup } from "./Markup";
 import { SoundToggle } from "./SoundToggle";
 import { ThemeToggle } from "./ThemeToggle";
 
-function Mention({ className }: { className: string }) {
+export function Mention({ className }: { className: string }) {
   return (
     <p className={className}>
       <strong>{INTERFACE.mention.fort}</strong>

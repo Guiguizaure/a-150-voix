@@ -18,10 +18,11 @@ import { FORMES } from "./democratie";
 import { ETAPES } from "./etapes";
 import { CONTENU } from "./index";
 import { SESSIONS } from "./sessions";
+import * as legal from "./legal";
 import { FAITS, SOURCES, type Fait } from "./sources";
 
 const affiches = textes(CONTENU);
-const registre = textes({ SOURCES, FAITS });
+const registre = textes({ SOURCES, FAITS, legal });
 
 describe("typographie", () => {
   it.each([...affiches, ...registre].filter((t) => !t.langue))(

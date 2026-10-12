@@ -6,7 +6,12 @@ import {
   waitForAnimations,
 } from "./fixtures";
 
-const ADRESSES = ["/", ...ETAPES.map((e) => `/${e.slug}`)];
+const ADRESSES = [
+  "/",
+  ...ETAPES.map((e) => `/${e.slug}`),
+  "/mentions-legales",
+  "/sources",
+];
 
 for (const palette of ["nuit", "papier"] as const) {
   test.describe(`palette ${palette === "nuit" ? "Nuit" : "Papier"}`, () => {

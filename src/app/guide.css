@@ -715,6 +715,70 @@ input[type="range"]:focus-visible {
   border: 1.5px solid color-mix(in srgb, var(--fg) 60%, transparent);
 }
 
+/* Pages hors du guide (mentions légales, sources, page introuvable) */
+.simple-corps {
+  max-width: 46rem;
+  padding: clamp(24px, 5vh, 56px) var(--gut) 0;
+}
+.page h2 {
+  font-weight: 500;
+  font-size: 1.15rem;
+  margin: 32px 0 8px;
+}
+.page p,
+.page address,
+.page li {
+  font-size: var(--t-body);
+  color: var(--body);
+  max-width: 62ch;
+}
+.page p {
+  margin: 0 0 12px;
+}
+.page address {
+  font-style: normal;
+  margin: 0 0 12px;
+}
+.page .k-label {
+  font-size: var(--t-label);
+  color: var(--muted);
+  margin: 0 0 6px;
+}
+.page .foot {
+  margin-top: 48px;
+}
+.sources {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.sources > li {
+  border-top: 1px solid var(--line);
+  padding: 4px 0 18px;
+}
+.sources h2 {
+  font-size: 1.05rem;
+  line-height: 1.35;
+}
+.sources .source-meta {
+  font-size: var(--t-small);
+  color: var(--muted);
+  margin: 0 0 12px;
+}
+.sources ul {
+  margin: 0;
+  padding-left: 1.1em;
+}
+.sources ul li {
+  font-size: 0.95rem;
+  margin: 0 0 6px;
+}
+.sources .statut,
+.sources .calcul {
+  color: var(--muted);
+  font-size: var(--t-small);
+}
+
 /* Navigation (a) : segments indicatifs, Précédent, Sommaire « n / 8 », Suivant */
 .nav {
   border-top: 1px solid var(--line);
@@ -927,7 +991,7 @@ input[type="range"]:focus-visible {
 }
 
 @media (min-width: 821px) {
-  body {
+  body:has(.app) {
     overflow: hidden;
   }
   /* La navigation reste visible en bas du panneau quand le texte défile. */
