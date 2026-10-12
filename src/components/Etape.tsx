@@ -1,6 +1,6 @@
 // Texte d'une étape : fil, titre (un mot par span pour l'entrée animée), paragraphes, bloc
 // propre à l'étape, note et ligne de fin.
-import type { Etape as EtapeT } from "@content/etapes";
+import { SCENES, type Etape as EtapeT } from "@content/etapes";
 import { fil } from "@/lib/guide";
 import { Markup } from "./Markup";
 import { BlocDemocratie } from "./etapes/Democratie";
@@ -58,6 +58,9 @@ export function Etape({ etape }: { etape: EtapeT }) {
           <Bloc />
         </div>
       )}
+      <p className="sr-only">
+        <Markup texte={SCENES[etape.slug].description} />
+      </p>
       {"note" in etape && etape.note && (
         <aside
           className="note reveal"

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ACCUEIL, ETAPES, PARTIES, type Partie } from "@content/etapes";
+import { ACCUEIL, ETAPES, PARTIES, SCENES, type Partie } from "@content/etapes";
 import { Markup } from "@/components/Markup";
 import { chemin } from "@/lib/guide";
 import { plainText } from "@/lib/markup";
@@ -20,6 +20,7 @@ export default function Accueil() {
       <p className="lead reveal" style={{ "--k": 0 } as React.CSSProperties}>
         <Markup texte={ACCUEIL.chapo.texte} />
       </p>
+      <p className="sr-only">{SCENES.intro.description}</p>
       {(Object.keys(PARTIES) as Partie[]).map((partie) => (
         <nav
           key={partie}

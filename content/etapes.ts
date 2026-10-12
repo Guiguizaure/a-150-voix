@@ -299,9 +299,19 @@ export const ETAPES = [
   },
 ] as const satisfies readonly Etape[];
 
-/** Textes des scènes et de leurs commandes (calques au-dessus du canvas). */
+/**
+ * Textes des scènes et de leurs commandes (calques au-dessus du canvas). `description` :
+ * ce que montre la scène, pour les lecteurs d'écran (le canvas lui-même est masqué).
+ */
 export const SCENES = {
+  intro: {
+    description:
+      "Illustration : 150 points, un par citoyen tiré au sort, flottent au-dessus d’un hémicycle.",
+    faits: ["ucaTirage150"],
+  },
   hasard: {
+    description:
+      "Illustration : des milliers de points s’allument, un par numéro de téléphone composé ; 150 sont retenus et rejoignent un hémicycle. Le compteur passe des numéros composés aux 150 personnes tirées au sort.",
     compteurAppels: "numéros de téléphone composés",
     /** {n} : nombre d'appels représentés par un point, calculé par la scène. */
     uniteAppels: "1 point ≈ {n} appels",
@@ -311,6 +321,8 @@ export const SCENES = {
     faits: ["ucaNumeros", "ucaTirage150"],
   },
   ecouter: {
+    description:
+      "Illustration : les 150 citoyens, en rangs face à un orateur dont la parole se propage en ondes. La légende nomme tour à tour les cinq auditions de la première session.",
     etiquette: "Audition",
     auditions: [
       "Climat · Valérie Masson-Delmotte",
@@ -319,9 +331,11 @@ export const SCENES = {
       "Économie · Patrice Geoffron",
       "Finances publiques · Selma Mahfouz",
     ],
-    faits: ["ucaAuditions1"],
+    faits: ["ucaAuditions1", "ucaTirage150"],
   },
   dilemme: {
+    description:
+      "Illustration : une corde tendue entre l’option A et l’option B, avec un nœud que l’on fait glisser vers l’option qui pèse le plus. Le curseur sous la scène permet de le déplacer au clavier ; la phrase qui l’accompagne dit ce que l’on gagne et ce que l’on accepte.",
     optionA: "Option A",
     optionB: "Option B",
     curseur: "Position du curseur entre l’option A et l’option B",
@@ -331,12 +345,17 @@ export const SCENES = {
     exemples: "Exemples de dilemmes",
   },
   deliberer: {
+    description:
+      "Illustration : 15 tables de 10 citoyens où les échanges se croisent, puis les 150 réunis tous ensemble, et de nouveau en petits groupes.",
     etiquette: "En ce moment",
     petitsGroupes: "En petits groupes",
     tousEnsemble: "Tous ensemble",
-    faits: ["ucaDeroule"],
+    faits: ["ucaDeroule", "ucaTirage150"],
   },
   accord: {
+    description:
+      "Illustration : 150 cordes qui vibrent chacune à sa façon, puis s’accordent sur trois harmoniques. Un curseur va du désaccord à l’accord ; un bouton active le son, coupé par défaut.",
+    faits: ["ucaTirage150"],
     desaccord: "Désaccord",
     accord: "Accord",
     curseur: "Du désaccord à l’accord",
@@ -346,20 +365,26 @@ export const SCENES = {
     couper: "Couper le son",
   },
   suivre: {
+    description:
+      "Illustration : une frise des six sessions, de septembre 2026 à février 2027, puis l’élection présidentielle ; les sessions passées sont pleines et les 150 citoyens se tiennent au-dessus du jour présent.",
     aujourdhui: "aujourd’hui",
     presidentielle: "Présidentielle · avril 2027",
-    faits: ["afpPresidentielle"],
+    faits: ["afpPresidentielle", "ucaCalendrier", "ucaTirage150"],
   },
   democratie: {
+    description:
+      "Illustration : les points prennent la forme du dispositif choisi : la grille des propositions d’une convention, un hémicycle et son référendum, un conseil et une assemblée, une jauge de soutiens, une part de budget, une machine à tirer au sort.",
     formes: "Autres formes de participation",
   },
   soutenir: {
+    description:
+      "Illustration : un hémicycle de 150 sièges ; les deux tiers sont pleins, couverts par les dons du lancement, le dernier tiers est vide, recherché par la cagnotte. Un point représente environ 20 000 €.",
     montant: "≈ 3 M€",
     legende: "budget estimé de l’assemblée",
     dons: "couverts par des dons au lancement (2/3)",
     cagnotte: "recherchés via la cagnotte (1/3)",
     unite: "Un point ≈ 20 000 €",
-    faits: ["ucaBudget", "ucaDons", "coutParCitoyen"],
+    faits: ["ucaBudget", "ucaDons", "coutParCitoyen", "ucaTirage150"],
   },
 } as const;
 

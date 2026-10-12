@@ -2,6 +2,7 @@
 // et le pied de page, et l'emplacement de la scène. Reste montée d'une étape à l'autre.
 import Link from "next/link";
 import { INTERFACE } from "@content/interface";
+import { Gestes } from "./Gestes";
 import { GuideNav } from "./GuideNav";
 import { Lien, Markup } from "./Markup";
 import { SoundToggle } from "./SoundToggle";
@@ -45,6 +46,7 @@ export function Shell({
 }) {
   return (
     <div className="app">
+      <Gestes />
       <a className="lien-evitement" href="#contenu">
         {INTERFACE.evitement}
       </a>
