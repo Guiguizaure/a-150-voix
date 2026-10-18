@@ -42,7 +42,7 @@ export const MENTIONS = {
   ],
   credits: "Crédits",
   creditsTexte: [
-    "Conçu par Guillaume Salle ([webjuno.com](https://webjuno.com)), avec Claude.",
+    "Conçu par Guillaume Salle ([webjuno.com](https://webjuno.com)).",
     "Polices Hanken Grotesk et Newsreader, sous licence SIL Open Font License 1.1. Le code source est consultable sur [GitHub](https://github.com/Guiguizaure/a-150-voix).",
   ],
 } as const;
