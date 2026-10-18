@@ -35,8 +35,9 @@ de Guillaume Salle (Webjuno). Lire le README pour l'organisation et les commande
 - **Indépendance** : « Projet indépendant, sans lien avec les organisateurs d'Un commun
   accord » dans l'en-tête et le pied de page. Ni logo, ni photo, ni vidéo d'Un commun accord :
   des liens.
-- **Pied de page** : « Conçu par Guillaume Salle · webjuno.com, avec Claude ». Ne jamais écrire
-  « développé entièrement à la main ».
+- **Pied de page** : « Conçu par Guillaume Salle · webjuno.com », sans « avec Claude » (choix
+  de Guillaume du 18 octobre 2026) ; Claude reste cité dans les crédits des mentions légales.
+  Ne jamais écrire « développé entièrement à la main ».
 - **Couleurs** : pas de couleur de parti (bleu marine, rouge, rose, vert, orange vif). Palettes
   dans `src/lib/palette.ts` (Nuit par défaut, Papier au choix), reprises dans `globals.css`
   (testé) ; l'accent ne sert jamais de couleur de texte (`--hi` pour le texte d'accent).

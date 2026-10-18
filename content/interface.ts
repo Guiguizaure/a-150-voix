@@ -38,8 +38,7 @@ export const INTERFACE = {
   pied: {
     mention:
       "Projet indépendant, sans lien avec les organisateurs d’Un commun accord",
-    concu:
-      "Conçu par Guillaume Salle · [webjuno.com](https://webjuno.com), avec Claude",
+    concu: "Conçu par Guillaume Salle · [webjuno.com](https://webjuno.com)",
     mentionsLegales: "Mentions légales",
     sources: "Sources",
   },
