@@ -1,0 +1,45 @@
+// Textes de l'interface : en-tête, navigation, pied de page.
+
+export const INTERFACE = {
+  evitement: "Aller au contenu",
+  accueil: "Accueil d’À 150 voix",
+  mention: {
+    fort: "Projet indépendant",
+    suite: ", sans lien avec les organisateurs d’Un commun accord",
+  },
+  nouvelOnglet: "nouvel onglet",
+  limite: "Limite.",
+  sessionPassee: "Session passée :",
+  partage: {
+    accueil:
+      "À 150 voix, guide indépendant sur l’assemblée citoyenne Un commun accord : 150 points, un par citoyen tiré au sort.",
+    faits: ["ucaTirage150"],
+    /** {n} et {titre} remplacés. */
+    etape: "À 150 voix, étape {n} : {titre}",
+  },
+  son: {
+    libelle: "Son",
+    titre: "Le son accompagne l’étape « S’accorder »",
+  },
+  palette: {
+    claire: "Palette claire",
+  },
+  nav: {
+    region: "Étapes du guide",
+    precedent: "Précédent",
+    suivant: "Suivant",
+    commencer: "Commencer",
+    recommencer: "Recommencer",
+    sommaire: "Sommaire",
+    fermer: "Fermer le sommaire",
+    /** « Étape 3 sur 8 » pour les lecteurs d'écran ; {n} et {total} remplacés. */
+    position: "Étape {n} sur {total}",
+  },
+  pied: {
+    mention:
+      "Projet indépendant, sans lien avec les organisateurs d’Un commun accord",
+    concu: "Conçu par Guillaume Salle · [webjuno.com](https://webjuno.com)",
+    mentionsLegales: "Mentions légales",
+    sources: "Sources",
+  },
+} as const;

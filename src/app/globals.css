@@ -1,0 +1,87 @@
+@import "tailwindcss";
+@import "./guide.css";
+
+/* Palettes : Nuit par défaut, quel que soit le réglage du système ; Papier quand on la
+   choisit (data-palette, posé par le script de <head> et le bouton de l'en-tête).
+   Valeurs reprises de src/lib/palette.ts (vérifié par un test). */
+:root {
+  --bg: #0e1014;
+  --fg: #ece6d8;
+  --muted: #958f84;
+  --accent: #f1d06b;
+  --hi: #f6dc8a;
+  --cta: #f1d06b;
+  --ctaTexte: #0e1014;
+  --line: color-mix(in srgb, var(--fg) 13%, transparent);
+  --body: color-mix(in srgb, var(--fg) 86%, var(--bg));
+  color-scheme: dark;
+
+  --f-sans: "Hanken Grotesk", "Helvetica Neue", Arial, system-ui, sans-serif;
+  --f-serif: "Newsreader", Georgia, "Times New Roman", serif;
+  --t-hero: clamp(3.2rem, 1.9rem + 4.6vw, 6.4rem);
+  --t-title: clamp(2rem, 1.35rem + 1.9vw, 3.3rem);
+  --t-body: 1.0625rem;
+  --t-small: 0.8125rem;
+  --t-label: 0.7rem;
+  --gut: clamp(16px, 3.2vw, 56px);
+  --cible: 44px;
+}
+
+:root[data-palette="papier"] {
+  --bg: #ece5d5;
+  --fg: #1c1b1f;
+  --muted: #675f53;
+  --accent: #956f00;
+  --hi: #785800;
+  --cta: #f1d06b;
+  --ctaTexte: #1c1b1f;
+  --line: color-mix(in srgb, var(--fg) 14%, transparent);
+  color-scheme: light;
+}
+
+@layer base {
+  html,
+  body {
+    height: 100%;
+  }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font-family: var(--f-sans);
+    font-size: 16px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    transition:
+      background-color 0.5s,
+      color 0.5s;
+  }
+  :focus-visible {
+    outline: 2px solid var(--hi);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+  a {
+    color: inherit;
+    text-decoration: underline;
+    text-decoration-color: var(--hi);
+    text-underline-offset: 3px;
+  }
+  em,
+  .accent {
+    font-family: var(--f-serif);
+    font-style: italic;
+    font-weight: 500;
+    color: var(--hi);
+  }
+  ::selection {
+    background: var(--hi);
+    color: var(--bg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body {
+    transition: none;
+  }
+}
